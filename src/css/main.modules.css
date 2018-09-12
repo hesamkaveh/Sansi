@@ -1,0 +1,412 @@
+body {
+    color: #444;
+    background: #fff;
+    font-family: IRANSans !important;
+}
+
+@media (max-width: 767px) {
+    .container-fluid {
+        width: 99% !important;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .container-fluid {
+        width: 90% !important;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1200px) {
+    .container-fluid {
+        width: 80% !important;
+    }
+}
+
+@media (min-width: 1200px) and (max-width: 1800px) {
+    .container-fluid {
+        width: 80% !important;
+    }
+}
+
+@media (min-width: 1800px) {
+    .container-fluid {
+        width: 60% !important;
+    }
+}
+
+a {
+    color: unset !important;
+}
+
+a:hover {
+    color: unset !important;
+    text-decoration: none;
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: bold;
+    src: url('../fonts/eot/IRANSansWeb_Bold.eot');
+    src: url('../fonts/eot/IRANSansWeb_Bold.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb_Bold.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('/static/fonts/woff/IRANSansWeb_Bold.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('/static/fonts/ttf/IRANSansWeb_Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 500;
+    src: url('../fonts/eot/IRANSansWeb_Medium.eot');
+    src: url('../fonts/eot/IRANSansWeb_Medium.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb_Medium.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('/static/fonts/woff/IRANSansWeb_Medium.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('/static/fonts/ttf/IRANSansWeb_Medium.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 300;
+    src: url('../fonts/eot/IRANSansWeb_Light.eot');
+    src: url('../fonts/eot/IRANSansWeb_Light.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb_Light.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('/static/fonts/woff/IRANSansWeb_Light.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('/static/fonts/ttf/IRANSansWeb_Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: 200;
+    src: url('../fonts/eot/IRANSansWeb_UltraLight.eot');
+    src: url('../fonts/eot/IRANSansWeb_UltraLight.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb_UltraLight.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('/static/fonts/woff/IRANSansWeb_UltraLight.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('/static/fonts/ttf/IRANSansWeb_UltraLight.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    src: url('../fonts/eot/IRANSansWeb.eot');
+    src: url('../fonts/eot/IRANSansWeb.eot?#iefix') format('embedded-opentype'), /* IE6-8 */ url('../fonts/woff2/IRANSansWeb.woff2') format('woff2'), /* FF39+,Chrome36+, Opera24+*/ url('/static/fonts/woff/IRANSansWeb.woff') format('woff'), /* FF3.6+, IE9, Chrome6+, Saf5.1+*/ url('/static/fonts/ttf/IRANSansWeb.ttf') format('truetype');
+}
+
+.TextLogo {
+    font-size: 40px;
+    border-bottom: 1px dotted #ccc;
+    display: inline-block;
+    line-height: 80px;
+    margin: 35px 0 50px;
+    font-weight: 800;
+    text-decoration: none !important;
+}
+
+.TextLogo:hover {
+    color: #000;
+}
+
+.navbarContainer {
+    margin-top: 50px;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    font-weight: 500 !important;
+}
+
+.nav-item {
+    display: inline-block;
+}
+
+.textColor1 {
+    color: #333;
+}
+
+span.nav-item a {
+    padding: 0;
+    margin: 10px 16px;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0);
+
+}
+
+a.nav-link.active {
+    color: #cc3300 !important;
+    border-bottom-color: #ccc !important;
+
+}
+
+span.nav-item a:hover {
+    border-bottom: 1px dotted #ccc;;
+}
+
+/* homePG blog */
+.postTitle, .postTitle2 {
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    display: table;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.postTitle:hover, .continueReadingBtn:hover {
+    color: #000;
+    background-color: #f7f7f7;
+    text-decoration: none;
+}
+
+.continueReadingBtn {
+    display: block;
+    max-width: 18.75em;
+    text-align: center;
+    margin: 2.5em auto 0 auto;
+    padding: 0.5em 0 0.4em 0;
+    color: #444;
+    font-weight: 400;
+    font-size: .85em;
+    background: none;
+    border-bottom: 1px dotted #ccc;
+    letter-spacing: 2px;
+}
+
+.everyPostContainer {
+    margin: 70px 10px 10px 10px;
+
+}
+
+.postDescriptin {
+    text-align: center;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 60px;
+
+}
+
+.postDescriptin img {
+    width: 15px;
+    color: red;
+}
+
+.postContent {
+    color: #444;
+}
+
+/*kenare safhe*/
+label {
+    display: block;
+    font-weight: 500;
+    color: #444;
+}
+
+#search {
+    padding: .7em;
+    width: 262px;
+    max-width: 100%;
+    font-size: .9em;
+    color: #444;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    background: #fff;
+    -webkit-appearance: none;
+    -webkit-tap-highlight-color: transparent;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+li > a:hover {
+    background-color: #f7f7f7;
+    border-bottom: 1px dotted #aaa;
+}
+
+#lastPostOnSlider, #categoriesOnSlider {
+    padding: 0;
+}
+
+#lastPostOnSlider li, #categoriesOnSlider li {
+    list-style: none;
+    position: relative;
+    padding-right: 30px;
+    margin-bottom: .4em;
+    line-height: 1.4;
+}
+
+#lastPostOnSlider li:before,
+#categoriesOnSlider li:before {
+    content: '';
+    /* display: inline-block; */
+    height: 22px;
+    background-repeat: no-repeat;
+    background-position: 0px 5px;
+    position: absolute;
+    right: 0px;
+    font-size: 10px;
+    width: 22px;
+    color: #666;
+}
+
+#lastPostOnSlider li:before {
+    background-image: url(../images/push-pin.png);
+
+}
+
+#categoriesOnSlider li:before {
+    background-image: url(../images/bookmark.png);
+
+}
+
+.slider {
+    width: 100%;
+}
+
+@media (min-width: 991px) {
+    .slider {
+        max-width: 300px;
+
+    }
+}
+
+@media (max-width: 991px) {
+    .routeContainer, .slider {
+        flex-basis: unset !important;
+    }
+}
+
+.slider li {
+    color: #333 !important;
+}
+
+#goUp {
+    width: 35px;
+    height: 35px;
+    background-color: #333;
+    display: block;
+}
+
+#goUp img {
+    margin: 0 auto;
+    display: block;
+    padding-top: 12px;
+}
+
+.followMe svg {
+    width: 35px;
+    height: 35px;
+    color: red;
+    padding: 5px;
+    border: 1px solid #ddd;
+}
+
+a.followMeContainer {
+    display: inline-block;
+    margin: 0 5px;
+}
+
+svg * {
+    fill: #333 !important;
+}
+
+a.followMeContainer:nth-child(2) svg:hover {
+    background-color: #E42B55;
+}
+
+a.followMeContainer:nth-child(3) svg:hover {
+    background-color: #FF001B;
+}
+
+a.followMeContainer:nth-child(4) svg:hover {
+    background-color: #0077B5;
+}
+
+a.followMeContainer:nth-child(5) svg:hover {
+    background-color: #1DA1F2;
+}
+
+a.followMeContainer:nth-child(6) svg:hover {
+    background-color: #E24329;
+}
+
+.pc {
+    width: 100%;
+}
+
+.footer {
+    border-top: 1px solid #eee;
+    margin-top: 30px;
+    text-align: center;
+    line-height: 55px;
+}
+
+.copyRight {
+    color: #333;
+}
+
+.developedBy a {
+    color: #cc3300b3 !important;
+}
+
+.developedBy a:hover {
+    color: #cc3300 !important;
+
+}
+
+.tags {
+    padding: 2em 0;
+    position: relative;
+    text-align: center;
+}
+
+.logo {
+    height: 200px;
+}
+
+.postContent * {
+    max-width: 100%;
+}
+
+.postContent img {
+    margin: 0 auto;
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.featured_post_icon {
+    width: 100%;
+    margin: 15px 0;
+}
+
+.tags svg * {
+    fill: #aaa !important;
+    color: #aaa !important;
+}
+
+.tags svg {
+    width: 21px;
+    margin: 0 auto;
+    display: block;
+    height: auto;
+    padding-bottom: 15px;
+}
+
+.tags a {
+
+    color: #333;
+    border-bottom: 1px dotted #ccc;
+    text-align: center;
+
+}
+
+.routeContainer {
+    max-width: 780px;
+    margin: 0 auto;
+
+}
+
+.slider {
+    margin: 0 auto;
+}
+
+.categoryName {
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 15px;
+    font-weight: 500;
+}
+
+.categoryDescription {
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+}
