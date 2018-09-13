@@ -37,12 +37,16 @@ class PostIcons extends React.Component {
     }
 
     render() {
-        const date = (this.props.node.date.split(','))
+        var date="2018,9,1".split(',')
+        try{
+              date = (this.props.node.date.split(','))
+
+        }catch (e) {
+        }
         const jalali=toJalaali(Number(date[0]),Number(date[1]),Number(date[2]))
         return (
             <div className="postDescriptin">
                                 <span>
-                                    {console.log(date)}
                                     <img src={dateSvg} alt="logo"/>
                                     {' '}
                                     {jalali.jd} {' '}
