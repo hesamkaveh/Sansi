@@ -45,6 +45,7 @@ export const pageQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+      date(formatString: "YYYY,M,DD")
         tags {
           name
           slug

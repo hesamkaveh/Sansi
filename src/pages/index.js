@@ -27,13 +27,15 @@ export default Home
 // Set here the ID of the home page.
 export const pageQuery = graphql`
   query {
-    allWordpressPost(sort: { fields: [date] }) {
+    allWordpressPost(sort: { fields: [date], order: DESC }) {
       edges {
         node {
           title
           excerpt
           content
           slug
+                        date(formatString: "YYYY,M,DD")
+
             featured_media {
                 media_details {
                 width

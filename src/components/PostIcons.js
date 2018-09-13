@@ -32,20 +32,22 @@ class PostIcons extends React.Component {
             case 12:
                 return ("اسفند")
             default:
-                return("")
+                return ("")
         }
     }
 
     render() {
-
+        const date = (this.props.node.date.split(','))
+        const jalali=toJalaali(Number(date[0]),Number(date[1]),Number(date[2]))
         return (
             <div className="postDescriptin">
                                 <span>
+                                    {console.log(date)}
                                     <img src={dateSvg} alt="logo"/>
                                     {' '}
-                                    {toJalaali(2016, 4, 11).jd} {' '}
-                                    {this.monthToString(toJalaali(2016, 4, 11).jm)} {' '}
-                                    {toJalaali(2016, 4, 11).jy} {' '}
+                                    {jalali.jd} {' '}
+                                    {this.monthToString(jalali.jm)} {' '}
+                                    {jalali.jy} {' '}
 
 
 
