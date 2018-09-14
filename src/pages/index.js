@@ -2,9 +2,7 @@ import React, {Component} from "react"
 import { graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev"
-import '../css/bootstrap.min.css'
-import '../css/bootstrap-rtl.min.css'
-import '../css/main.modules.css'
+
 
 class Home extends Component {
     render() {

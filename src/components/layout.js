@@ -5,6 +5,9 @@ import Slider from "./Slider";
 // import PropTypes from "prop-types"
 import {graphql, StaticQuery} from "gatsby";
 import {Helmet} from "react-helmet";
+import '../css/bootstrap.min.css'
+import '../css/bootstrap-rtl.min.css'
+import '../css/main.modules.css'
 
 export default ({children}) => (
     <StaticQuery
