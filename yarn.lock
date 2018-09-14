@@ -4491,6 +4491,12 @@ gatsby-plugin-glamor@next:
   dependencies:
     "@babel/runtime" "^7.0.0"
 
+gatsby-plugin-google-analytics@^1.0.31:
+  version "1.0.31"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-1.0.31.tgz#eaf16e1809461b10badf12c05038c429745783c0"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-page-creator@^2.0.0-rc.5:
   version "2.0.0-rc.5"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-page-creator/-/gatsby-plugin-page-creator-2.0.0-rc.5.tgz#c6587ce83605c6856a4414453c499c5a23e2a62d"

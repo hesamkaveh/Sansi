@@ -24,6 +24,20 @@ module.exports = {
                 useACF: false,
             },
         },
+        {
+            resolve: `gatsby-plugin-google-analytics`,
+            options: {
+                trackingId: "UA-125787492-1",
+                // Puts tracking script in the head instead of the body
+                head: true,
+                // Setting this parameter is optional
+                anonymize: true,
+                // Setting this parameter is also optional
+                respectDNT: true,
+                // Avoids sending pageview hits from custom paths
+                exclude: ["/preview/**", "/do-not-track/me/too/"],
+            },
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-glamor`,

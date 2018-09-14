@@ -8,6 +8,7 @@
     "gatsby": "next",
     "gatsby-image": "next",
     "gatsby-plugin-glamor": "next",
+    "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
     "gatsby-plugin-sharp": "next",
     "gatsby-plugin-typography": "next",
