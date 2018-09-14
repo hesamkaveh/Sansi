@@ -4485,6 +4485,12 @@ gatsby-link@^2.0.0-rc.2:
     prop-types "^15.6.1"
     ric "^1.3.0"
 
+gatsby-plugin-canonical-urls@^1.0.18:
+  version "1.0.18"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-canonical-urls/-/gatsby-plugin-canonical-urls-1.0.18.tgz#01162f0638468bac4cc60976c46a99d41bbe90ba"
+  dependencies:
+    babel-runtime "^6.26.0"
+
 gatsby-plugin-glamor@next:
   version "2.0.0-rc.1"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-glamor/-/gatsby-plugin-glamor-2.0.0-rc.1.tgz#b6c90bae6f58cbab96d4987f8c9d9d35785d2da0"

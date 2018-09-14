@@ -38,6 +38,12 @@ module.exports = {
                 exclude: ["/preview/**", "/do-not-track/me/too/"],
             },
         },
+        {
+            resolve: `gatsby-plugin-canonical-urls`,
+            options: {
+                siteUrl: `https://hesamkaveh.com`,
+            },
+        },
         `gatsby-transformer-sharp`,
         `gatsby-plugin-sharp`,
         `gatsby-plugin-glamor`,
