@@ -16,7 +16,7 @@ class PostPrev extends Component {
                     <PostIcons node={node}/>
                     {node.featured_media ?
                         <img alt='' className='featured_post_icon'
-                             src={`http://back.hesamkaveh.com/wp-content/uploads/${node.featured_media.media_details.file}`}/> : null}
+                             src={`https://back.hesamkaveh.com/wp-content/uploads/${node.featured_media.media_details.file}`}/> : null}
                     {/*check have more content or seamless*/}
                     {node.content.includes("<!--more-->") ?
                         <div className='postContent'
