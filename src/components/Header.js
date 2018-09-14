@@ -3,6 +3,10 @@ import {Link} from "gatsby"
 
 import NavItem from "./NavItem";
 import logo from "../images/logo.jpg"
+import '../css/bootstrap.min.css'
+import '../css/bootstrap-rtl.min.css'
+import '../css/main.modules.css'
+
 class Header extends Component {
 
     render() {
