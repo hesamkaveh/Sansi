@@ -3,7 +3,18 @@ import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev";
 import Helmet from "react-helmet";
-
+import styled from "styled-components";
+const Name=styled.h1`
+    font-size: 25px;
+    line-height: 35px;
+    margin-top: 15px;
+    font-weight: 500;
+`;
+const Description=styled.h2`
+    font-size: 18px;
+    line-height: 30px;
+    font-weight: 400;
+`;
 
 class PageTemplate extends Component {
     render() {
@@ -15,8 +26,8 @@ class PageTemplate extends Component {
                 <Helmet>
                     <title>{currentCategory.name} | {this.props.data.site.siteMetadata.title}</title>
                 </Helmet>
-                <h1 className='categoryName'>{currentCategory.name}</h1>
-                <h3 className='categoryDescription'>{currentCategory.description}</h3>
+                <Name>{currentCategory.name}</Name>
+                <Description>{currentCategory.description}</Description>
                 <hr/>
                 {Posts.edges.map(({node}) => (
                     <PostPrev node={node} key={node.slug}/>

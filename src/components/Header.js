@@ -3,21 +3,35 @@ import {Link} from "gatsby"
 
 import NavItem from "./NavItem";
 import logo from "../images/logo.jpg"
-// import '../static/bootstrap-rtl.min.css'
-import '../static/gride.rtl.css'
-import '../static/main.modules.css'
+import styled from "styled-components";
+
+const Logo = styled.img`
+height: 200px;
+`;
+const Title = styled.h1`
+font-weight:400;
+font-size:16px;
+margin: 0;
+`;
+const Navbar = styled.div`
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px dotted #ccc;
+    border-bottom: 1px dotted #ccc;
+    font-weight: 500;
+`;
 
 class Header extends Component {
 
     render() {
         return (
             <div style={{textAlign: 'center'}}>
-                <Link to=''><img className="logo" src={logo} alt=""/></Link>
-                <div>روز نوشته های یک توسعه دهنده</div>
-                <div className={"rtl navbarContainer text-center"}>
+                <Link to='/'><Logo src={logo} alt=""/></Link>
+                <Title>روز نوشته های یک توسعه دهنده</Title>
+                <Navbar>
                     <NavItem to="/">بلاگ</NavItem>
                     <NavItem to="/about">درباره حسام</NavItem>
-                </div>
+                </Navbar>
             </div>
         );
     }

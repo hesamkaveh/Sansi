@@ -2,8 +2,18 @@ import {graphql} from "gatsby"
 import React from "react"
 import dateSvg from "../images/calendar.svg";
 import {toJalaali} from 'jalaali-js'
+import styled from "styled-components";
 
-
+const PostDetail = styled.div`
+    text-align: center;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 60px;
+    img {
+        width: 15px;
+        color: red;
+    }
+`;
 class PostIcons extends React.Component {
     monthToString(monthInt) {
         switch (monthInt) {
@@ -45,25 +55,20 @@ class PostIcons extends React.Component {
         }
         const jalali=toJalaali(Number(date[0]),Number(date[1]),Number(date[2]))
         return (
-            <div className="postDescriptin">
+            <PostDetail>
                                 <span>
                                     <img src={dateSvg} alt="logo"/>
                                     {' '}
                                     {jalali.jd} {' '}
                                     {this.monthToString(jalali.jm)} {' '}
                                     {jalali.jy} {' '}
-
-
-
                                 </span>
                 {'\u00A0'}{'\u00A0'}
                 {/*<span>*/}
                 {/*<img src={commentSvg} alt="logo"/> {'\u00A0'}*/}
                 {/*{node.comments} کامنت*/}
                 {/*</span>*/}
-
-
-            </div>
+            </PostDetail>
         )
     }
 }

@@ -6,7 +6,16 @@ import Tags from "../components/Tags"
 // import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet";
+import styled from "styled-components";
 
+const Title = styled.h1`
+    display: table;
+    font-size: 28px;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 0 auto;
+    text-align: center;
+`;
 
 class PostTemplate extends Component {
     render() {
@@ -15,18 +24,16 @@ class PostTemplate extends Component {
         return (
             <Layout>
                 <Helmet>
-                    <title>{post.title} | {this.props.data.site.siteMetadata.title}</title>
+                    <h1>{post.title} | {this.props.data.site.siteMetadata.title}</h1>
                 </Helmet>
-                <div className="everyPostContainer">
-                    <div className="pc">
-                        <h1 className='postTitle2' dangerouslySetInnerHTML={{__html: post.title}}/>
+                <div className="postContainer">
+                        <Title dangerouslySetInnerHTML={{__html: post.title}}/>
                         <PostIcons node={post}/>
-                        {post.featured_media ? <img alt='' className="featured_post_icon"
+                        {post.featured_media ? <img alt='' className="FeaturedPostImg"
                                                     src={`https://back.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
-                        <div className='postContent' dangerouslySetInnerHTML={{__html: post.content}}/>
+                        <div className='content' dangerouslySetInnerHTML={{__html: post.content}}/>
                         <hr/>
                         {post.tags ? <Tags tags={post.tags}/> : null}
-                    </div>
                 </div>
             </Layout>
         )

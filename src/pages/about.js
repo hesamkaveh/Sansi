@@ -9,7 +9,7 @@ export default (data) => (
         <Helmet>
             <title>درباره حسام | {data.data.site.siteMetadata.title}</title>
         </Helmet>
-    <div className="rtl everyPostContainer">
+    <div className="postContainer">
         {console.log(data)}
         <h2 style={{textAlign: 'center'}}>درباره من</h2>
         <p>

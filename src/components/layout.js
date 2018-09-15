@@ -5,8 +5,64 @@ import Slider from "./Slider";
 // import PropTypes from "prop-types"
 import {graphql, StaticQuery} from "gatsby";
 import {Helmet} from "react-helmet";
+import styled from "styled-components";
+import '../global-styles'
+
+const Container = styled.div`
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 100%;
+@media (max-width: 767px) { width: 99% !important;}
+
+@media (min-width: 768px) and (max-width: 991px) { width: 90% !important;}
+
+@media (min-width: 992px) and (max-width: 1200px) { width: 80% !important;}
+
+@media (min-width: 1200px) and (max-width: 1800px) { width: 80% !important;}
+
+@media (min-width: 1800px) { width: 60% !important;}
+
+@media (min-width: 991px) {.slider {max-width: 300px;}}
+
+@media (max-width: 991px) {.slider {flex-basis: unset !important;}}
 
 
+
+`;
+const PageBody=styled.div`
+    direction: rtl;
+    text-align: right;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+
+    
+`;
+const Col=styled.div`
+    -ms-flex-positive: 1;
+    -ms-flex-preferred-size: 0;
+    flex-basis: 0;
+    flex-grow: 1;
+    max-width: 100%;
+    min-height: 1px;
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    width: 100%;
+    
+`;
+const HotPlace=styled(Col)`
+    max-width: 780px;
+    margin: 0 auto;
+`;
+const SliderContainer=styled(Col)`
+    max-width: 780px;
+    margin: 0 auto;
+`;
 export default ({children}) => (
     <StaticQuery
         query={graphql`
@@ -36,7 +92,7 @@ site {
           }
     `}
         render={data => (
-            <div className='container-fluid'>
+            <Container className='container-fluid' style={{direction: "rtl"}}>
                 <Helmet>
                     <title>{data.site.siteMetadata.title}</title>
                     <meta charSet="utf-8"/>
@@ -50,15 +106,17 @@ site {
                     <meta property="og:locale" content="fa_IR"/>
                 </Helmet>
                 <Header/>
-                <div className="row rtl">
-                    <div className="col routeContainer">
+                <PageBody>
+                    <HotPlace>
                         {children}
-                    </div>
-                    <div className="col slider"><Slider lastPost={data.allWordpressPost.edges}
-                                                        allCategories={data.allWordpressCategory.edges}/></div>
-                </div>
+                    </HotPlace>
+                    <SliderContainer className="slider">
+                        <Slider lastPost={data.allWordpressPost.edges}
+                                                        allCategories={data.allWordpressCategory.edges}/>
+                    </SliderContainer>
+                </PageBody>
                 <Footer/>
-            </div>
+            </Container>
 
         )}
     />
