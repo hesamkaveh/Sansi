@@ -24,7 +24,7 @@ class PostTemplate extends Component {
         return (
             <Layout>
                 <Helmet>
-                    <h1>{post.title} | {this.props.data.site.siteMetadata.title}</h1>
+                    <title>{post.title} | {this.props.data.site.siteMetadata.title}</title>
                 </Helmet>
                 <div className="postContainer">
                         <Title dangerouslySetInnerHTML={{__html: post.title}}/>
