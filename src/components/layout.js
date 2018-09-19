@@ -7,6 +7,7 @@ import {graphql, StaticQuery} from "gatsby";
 import {Helmet} from "react-helmet";
 import styled from "styled-components";
 import '../global-styles'
+import favicon from '../images/favicon.ico'
 
 const Container = styled.div`
     margin-left: auto;
@@ -100,6 +101,7 @@ site {
                           content={data.site.siteMetadata.subtitle}/>
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                     <meta name="theme-color" content="#fff"/>
+                    <link rel="Shortcut Icon" href={favicon} type="image/x-icon"/>
                     <meta name="keywords"
                           content="مطالب آموزشی, لینوکس، پایتون، توسعه فردی، دوچرخه سواری, برنامه نویسی، کامپیوتر"/>
                     <meta property="og:site_name" content={data.site.siteMetadata.title}/>
@@ -108,6 +110,7 @@ site {
                     <meta property="og:type" content="website"/>
                     <meta name="twitter:app:country" content="IR"/>
                     <meta name="twitter:site" content="@hesamkaveh97"/>
+
                 </Helmet>
                 <Header/>
                 <PageBody>
