@@ -21,7 +21,7 @@ const Tag = styled.div`
  a {
     color: #333;
     text-align: center;
-    margin: 0 6px;
+    margin: 0 4px;
     
 }
 a:hover{
@@ -38,7 +38,7 @@ class Tags extends React.Component {
         return (
             <Tag>
                 <InlineSVG src={tag} />
-                {tags.map((s, index) => (<a href={`/tag/` + s.slug}>{s.name}</a>))}
+                {tags.map((s, index) => (<a href={`/tag/` + s.slug}>{s.name} </a>))}
             </Tag>
         )
     }
