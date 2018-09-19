@@ -145,7 +145,7 @@ class Slider extends Component {
                         <InlineSVG src={linkedinSvg}/></FollowMeContainer_Linkedin>
                     <FollowMeContainer_Twitter on="twitter" href="http://twitter.com/hesamkaveh97">
                         <InlineSVG src={twitterSvg}/></FollowMeContainer_Twitter>
-                    <FollowMeContainer_Gitlab on="gitlab" href="https://gitlab.com/Hesamkaveh/">
+                    <FollowMeContainer_Gitlab on="gitlab" href="https://github.com/Hesamkaveh/">
                         <InlineSVG src={gitlabSvg}/></FollowMeContainer_Gitlab>
                 </Container>
             </div>
