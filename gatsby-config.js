@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `روزنوشته‌های حسام‌ کاوه`,
-        subtitle: `روزنوشته ها و مطالب یک توسعه دهنده`,
+        subtitle: `مطالبی در حوزه بیزینس، برنامه نویسی و توسعه مهارت های فردی`,
     },
     plugins: [
         // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/

@@ -31,7 +31,7 @@ const Container = styled.div`
 
 
 `;
-const PageBody=styled.div`
+const PageBody = styled.div`
     direction: rtl;
     text-align: right;
     display: -ms-flexbox;
@@ -42,7 +42,7 @@ const PageBody=styled.div`
 
     
 `;
-const Col=styled.div`
+const Col = styled.div`
     -ms-flex-positive: 1;
     -ms-flex-preferred-size: 0;
     flex-basis: 0;
@@ -55,11 +55,11 @@ const Col=styled.div`
     width: 100%;
     
 `;
-const HotPlace=styled(Col)`
+const HotPlace = styled(Col)`
     max-width: 780px;
     margin: 0 auto;
 `;
-const SliderContainer=styled(Col)`
+const SliderContainer = styled(Col)`
     max-width: 780px;
     margin: 0 auto;
 `;
@@ -94,16 +94,20 @@ site {
         render={data => (
             <Container className='container-fluid' style={{direction: "rtl"}}>
                 <Helmet>
-                    <title>{data.site.siteMetadata.title}</title>
                     <meta charSet="utf-8"/>
-                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-                    <meta name="theme-color" content="#fff"/>
+                    <title>{data.site.siteMetadata.title}</title>
                     <meta name="description"
                           content={data.site.siteMetadata.subtitle}/>
+                    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+                    <meta name="theme-color" content="#fff"/>
                     <meta name="keywords"
                           content="مطالب آموزشی, لینوکس، پایتون، توسعه فردی، دوچرخه سواری, برنامه نویسی، کامپیوتر"/>
-                    <meta property="og:site_name" content="روزنوشته های حسام کاوه"/>
+                    <meta property="og:site_name" content={data.site.siteMetadata.title}/>
+                    <meta property="og:title" content={data.site.siteMetadata.title}/>
                     <meta property="og:locale" content="fa_IR"/>
+                    <meta property="og:type" content="website"/>
+                    <meta name="twitter:app:country" content="IR"/>
+                    <meta name="twitter:site" content="@hesamkaveh97"/>
                 </Helmet>
                 <Header/>
                 <PageBody>
@@ -112,7 +116,7 @@ site {
                     </HotPlace>
                     <SliderContainer className="slider">
                         <Slider lastPost={data.allWordpressPost.edges}
-                                                        allCategories={data.allWordpressCategory.edges}/>
+                                allCategories={data.allWordpressCategory.edges}/>
                     </SliderContainer>
                 </PageBody>
                 <Footer/>

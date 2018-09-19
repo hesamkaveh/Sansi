@@ -25,15 +25,30 @@ class PostTemplate extends Component {
             <Layout>
                 <Helmet>
                     <title>{post.title} | {this.props.data.site.siteMetadata.title}</title>
+                    <meta name="keywords" itemProp="keywords"
+                          content={post.tags ? post.tags.map((tag) => `${tag.name},`) : null}/>
+                    <meta property="og:title" content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
+                    <meta property="og:description" content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
+                    <meta property="og:site_name" content={post.title}/>
+                    <meta property="og:type" content="article"/>
+
+                    {post.tags ? post.tags.map((tag) => <meta property="article:tag" content={tag.name}/>) : null}
+                    {post.tags ? <meta property="article:section" content={post.tags[0].name}/> : null}
+                    {/*TODO: add date*/}
+                    <meta name="twitter:description"
+                          content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
+                    <meta name="twitter:title"
+                          content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
                 </Helmet>
+
                 <div className="postContainer">
-                        <Title dangerouslySetInnerHTML={{__html: post.title}}/>
-                        <PostIcons node={post}/>
-                        {post.featured_media ? <img alt='' className="FeaturedPostImg"
-                                                    src={`https://back.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
-                        <div className='content' dangerouslySetInnerHTML={{__html: post.content}}/>
-                        <hr/>
-                        {post.tags ? <Tags tags={post.tags}/> : null}
+                    <Title dangerouslySetInnerHTML={{__html: post.title}}/>
+                    <PostIcons node={post}/>
+                    {post.featured_media ? <img alt='' className="FeaturedPostImg"
+                                                src={`https://back.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
+                    <div className='content' dangerouslySetInnerHTML={{__html: post.content}}/>
+                    <hr/>
+                    {post.tags ? <Tags tags={post.tags}/> : null}
                 </div>
             </Layout>
         )
@@ -48,30 +63,30 @@ PostTemplate.propTypes = {
 export default PostTemplate
 
 export const pageQuery = graphql`
-  query($id: String!) {
-    wordpressPost(id: { eq: $id }) {
-      title
-      content
-      date(formatString: "YYYY,M,DD")
+    query($id: String!) {
+        wordpressPost(id: {eq: $id}) {
+        title
+        content
+        date(formatString: "YYYY,M,DD")
         tags {
-          name
-          slug
-        }
-    featured_media {
-      media_details {
+        name
+        slug
+    }
+        featured_media {
+        media_details {
         width
         height
         file
-      }
     }
-    
-      # ...PostIcons
-}
-    site {
-      siteMetadata {
+    }
+
+        # ...PostIcons
+    }
+        site {
+        siteMetadata {
         title
         subtitle
-      }
     }
-  }
-`
+    }
+    }
+    `
