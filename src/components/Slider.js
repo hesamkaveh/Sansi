@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {Link} from "gatsby"
 import InlineSVG from 'react-inlinesvg';
 import instaSvg from '../images/instagram.svg'
-import gitlabSvg from '../images/gitlab.svg'
+import githubSvg from '../images/github-logo.svg'
 import twitterSvg from '../images/twitter.svg'
 import linkedinSvg from '../images/linkedin.svg'
 import youtubeSvg from '../images/youtube.svg'
@@ -146,7 +146,7 @@ class Slider extends Component {
                     <FollowMeContainer_Twitter on="twitter" href="http://twitter.com/hesamkaveh97">
                         <InlineSVG src={twitterSvg}/></FollowMeContainer_Twitter>
                     <FollowMeContainer_Gitlab on="gitlab" href="https://github.com/Hesamkaveh/">
-                        <InlineSVG src={gitlabSvg}/></FollowMeContainer_Gitlab>
+                        <InlineSVG src={githubSvg}/></FollowMeContainer_Gitlab>
                 </Container>
             </div>
         );
