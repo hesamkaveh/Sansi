@@ -2,7 +2,6 @@ module.exports = {
     siteMetadata: {
         title: `روزنوشته‌های حسام‌ کاوه`,
         subtitle: `مطالبی در حوزه بیزینس، برنامه نویسی و توسعه مهارت های فردی`,
-        description:'sadasdsa',
         siteUrl:"https://hesamkaveh.com/"
 
     },
@@ -68,7 +67,8 @@ module.exports = {
           site {
             siteMetadata {
               title
-              description
+              subtitle
+              description:subtitle
               siteUrl
               site_url: siteUrl
             }
