@@ -101,6 +101,9 @@ site {
                           content={data.site.siteMetadata.subtitle}/>
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                     <meta name="theme-color" content="#fff"/>
+                    <link rel="alternate" type="application/rss+xml"
+                          title="RSS Feed for hesamkaveh.com"
+                          href="/rss.xml" />
                     <link rel="Shortcut Icon" href={favicon} type="image/x-icon"/>
                     <meta name="keywords"
                           content="مطالب آموزشی, لینوکس، پایتون، توسعه فردی، دوچرخه سواری, برنامه نویسی، کامپیوتر"/>

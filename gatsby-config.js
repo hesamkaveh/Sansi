@@ -2,6 +2,9 @@ module.exports = {
     siteMetadata: {
         title: `روزنوشته‌های حسام‌ کاوه`,
         subtitle: `مطالبی در حوزه بیزینس، برنامه نویسی و توسعه مهارت های فردی`,
+        description:'sadasdsa',
+        siteUrl:"https://hesamkaveh.com/"
+
     },
     plugins: [
         // https://public-api.wordpress.com/wp/v2/sites/gatsbyjsexamplewordpress.wordpress.com/pages/
@@ -48,5 +51,65 @@ module.exports = {
         `gatsby-plugin-sharp`,
         `gatsby-plugin-react-helmet`,
         `gatsby-plugin-styled-components`,
+
+
+
+
+
+
+
+
+
+        {
+            resolve: `gatsby-plugin-feed`,
+            options: {
+                query: `
+        {
+          site {
+            siteMetadata {
+              title
+              description
+              siteUrl
+              site_url: siteUrl
+            }
+          }
+        }
+      `,
+                feeds: [
+                    {
+                        serialize: ({ query: { site, allWordpressPost } }) => {
+                            return allWordpressPost.edges.map(edge => {
+                                console.log(edge);
+                                return Object.assign({}, edge.node.title, {
+                                    title:edge.node.title,
+                                    description: edge.node.excerpt.replace(`https://back.hesamkaveh.com/${edge.node.date}`,"https://hesamkaveh.com"),
+                                    url: site.siteMetadata.siteUrl + edge.node.slug,
+                                    guid: site.siteMetadata.siteUrl + edge.node.slug,
+                                    custom_elements: [{ "content:encoded": edge.node.content }],
+                                })
+                            })
+                        },
+                        query: `
+            { 
+            allWordpressPost{
+            edges {
+              node {
+                      date(formatString: "YYYY/MM/DD")
+
+                  title
+                  excerpt
+                  content
+                  slug
+              }
+            }
+          }
+          }
+          `,
+                        output: "/rss.xml",
+                    },
+                ],
+            },
+        },
+
     ],
 }
