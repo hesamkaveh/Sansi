@@ -26,3 +26,11 @@ On Arch:
 `gatsby develop`
 
 If data fetched with no error, open localhost:8000 to see website
+
+# TODO
+-[ ] Fix Rss file in standard way
+-[ ] Load image in multiple resolutions
+-[ ] Add commenting system
+-[ ] Add Date in post detail
+-[ ] Fix in safari
+
