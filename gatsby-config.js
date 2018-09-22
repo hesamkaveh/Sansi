@@ -91,7 +91,7 @@ module.exports = {
                         },
                         query: `
             { 
-            allWordpressPost{
+        allWordpressPost(sort: { fields: [date], order: DESC }) {
             edges {
               node {
                       date(formatString: "YYYY/MM/DD")
