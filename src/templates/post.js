@@ -7,7 +7,7 @@ import Tags from "../components/Tags"
 import Layout from "../components/layout"
 import Helmet from "react-helmet";
 import styled from "styled-components";
-
+import Comments from '../components/Comments'
 const Title = styled.h1`
     display: table;
     font-size: 28px;
@@ -50,6 +50,7 @@ class PostTemplate extends Component {
                     <hr/>
                     {post.tags ? <Tags tags={post.tags}/> : null}
                 </div>
+                <Comments postId={post.wordpress_id}/>
             </Layout>
         )
     }
@@ -66,6 +67,7 @@ export const pageQuery = graphql`
     query($id: String!) {
         wordpressPost(id: {eq: $id}) {
         title
+        wordpress_id
         content
         date(formatString: "YYYY,M,DD")
         tags {
