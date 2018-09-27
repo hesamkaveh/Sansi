@@ -47,7 +47,7 @@ const LiInSlider = styled.li`
         font-size: 10px;
         width: 22px;
         color: #666;
-        background-image: ${props => props.whichLi == "post" ? `url(${LastPostPng})` : `url(${CategoryPng})`};
+        background-image: ${props => props.whichLi === "post" ? `url(${LastPostPng})` : `url(${CategoryPng})`};
     }
     a:hover {
         background-color: #f7f7f7;
@@ -65,27 +65,27 @@ const FollowMeContainer=styled.a`
         border: 1px solid #ddd; 
     }
 `;
-const FollowMeContainer_Insta=styled(FollowMeContainer)`
+const FollowMeContainerInsta=styled(FollowMeContainer)`
        svg:hover{
            background-color: #E42B55;
        }
 `;
-const FollowMeContainer_Youtube=styled(FollowMeContainer)`
+const FollowMeContainerYoutube=styled(FollowMeContainer)`
        svg:hover{
            background-color: #FF001B;
        }
 `;
-const FollowMeContainer_Linkedin=styled(FollowMeContainer)`
+const FollowMeContainerLinkedin=styled(FollowMeContainer)`
        svg:hover{
            background-color: #0077B5;
        }
 `;
-const FollowMeContainer_Twitter=styled(FollowMeContainer)`
+const FollowMeContainerTwitter=styled(FollowMeContainer)`
        svg:hover{
            background-color: #1DA1F2;
        }
 `;
-const FollowMeContainer_Gitlab=styled(FollowMeContainer)`
+const FollowMeContainerGitlab=styled(FollowMeContainer)`
        svg:hover{
            background-color: #E24329;
        }
@@ -136,17 +136,17 @@ class Slider extends Component {
 
                 <Container>
                     <Label htmlFor="search">حسام را دنبال کنید</Label>
-                    <FollowMeContainer_Insta on="instagram" href="https://www.instagram.com/hesamkaveh/">
-                        <InlineSVG src={instaSvg}/></FollowMeContainer_Insta>
-                    <FollowMeContainer_Youtube on="youtube"
+                    <FollowMeContainerInsta on="instagram" href="https://www.instagram.com/hesamkaveh/">
+                        <InlineSVG src={instaSvg}/></FollowMeContainerInsta>
+                    <FollowMeContainerYoutube on="youtube"
                        href="https://www.youtube.com/channel/UCyfBuLBzBIsbH6h4lXWjdlQ?view_as=subscriber">
-                        <InlineSVG src={youtubeSvg} /></FollowMeContainer_Youtube>
-                    <FollowMeContainer_Linkedin on="linkedin" href="www.linkedin.com/in/hesamkaveh">
-                        <InlineSVG src={linkedinSvg}/></FollowMeContainer_Linkedin>
-                    <FollowMeContainer_Twitter on="twitter" href="http://twitter.com/hesamkaveh97">
-                        <InlineSVG src={twitterSvg}/></FollowMeContainer_Twitter>
-                    <FollowMeContainer_Gitlab on="gitlab" href="https://github.com/Hesamkaveh/">
-                        <InlineSVG src={githubSvg}/></FollowMeContainer_Gitlab>
+                        <InlineSVG src={youtubeSvg} /></FollowMeContainerYoutube>
+                    <FollowMeContainerLinkedin on="linkedin" href="www.linkedin.com/in/hesamkaveh">
+                        <InlineSVG src={linkedinSvg}/></FollowMeContainerLinkedin>
+                    <FollowMeContainerTwitter on="twitter" href="http://twitter.com/hesamkaveh97">
+                        <InlineSVG src={twitterSvg}/></FollowMeContainerTwitter>
+                    <FollowMeContainerGitlab on="gitlab" href="https://github.com/Hesamkaveh/">
+                        <InlineSVG src={githubSvg}/></FollowMeContainerGitlab>
                 </Container>
             </div>
         );

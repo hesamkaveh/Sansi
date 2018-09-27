@@ -25,14 +25,14 @@ class PostTemplate extends Component {
             <Layout>
                 <Helmet>
                     <title>{post.title} | {this.props.data.site.siteMetadata.title}</title>
-                    <meta name="keywords" itemProp="keywords"
-                          content={post.tags ? post.tags.map((tag) => `${tag.name},`) : null}/>
+                    <meta name="keywords" itemProp="keywords" key={1}
+                          content={post.tags ? post.tags.map((tag) => `${tag.name}`) : null}/>
                     <meta property="og:title" content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
                     <meta property="og:description" content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
                     <meta property="og:site_name" content={post.title}/>
                     <meta property="og:type" content="article"/>
 
-                    {post.tags ? post.tags.map((tag) => <meta property="article:tag" content={tag.name}/>) : null}
+                    {post.tags ? post.tags.map((tag) => <meta key={2} property="article:tag" content={tag.name}/>) : null}
                     {post.tags ? <meta property="article:section" content={post.tags[0].name}/> : null}
                     {/*TODO: add date*/}
                     <meta name="twitter:description"

@@ -1,9 +1,6 @@
 import React, {Component} from "react"
-import PostIcons from "../components/PostIcons"
 // import Img from "gatsby-image"
-import Layout from "../components/layout"
-import Helmet from "react-helmet";
-import styled from "styled-components";
+
 import axios from 'axios';
 import Comment from "./comment";
 
@@ -16,8 +13,8 @@ class Comments extends Component {
         }
     }
 
-    componentWillMount() {
-        axios.get(`https://back.hesamkaveh.com/wp-json/wp/v2/comments?post=${this.props.postId}`)
+    QueryData(id) {
+        axios.get(`https://back.hesamkaveh.com/wp-json/wp/v2/comments?post=${id}`)
             .then(response => {
                 const data = response.data;
                 this.setState({
@@ -29,6 +26,25 @@ class Comments extends Component {
             })
     }
 
+    UNSAFE_componentWillReceiveProps(nextProps) {
+        this.QueryData(nextProps.postId)
+    }
+
+    UNSAFE_componentWillMount() {
+        this.QueryData(this.props.postId)
+    }
+    componentWillUnmount () {
+        this._mounted = false
+    }
+    componentDidMount () {
+        this._mounted = true
+    }
+    //
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     this.QueryData(nextProps.postId)
+    //     console.log(nextProps)
+    //     return true;
+    // }
 
 
     render() {

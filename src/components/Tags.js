@@ -38,7 +38,7 @@ class Tags extends React.Component {
         return (
             <Tag>
                 <InlineSVG src={tag} />
-                {tags.map((s, index) => (<a href={`/tag/` + s.slug}>{s.name} </a>))}
+                {tags.map((s, index) => (<a key={index} href={`/tag/` + s.slug}>{s.name} </a>))}
             </Tag>
         )
     }

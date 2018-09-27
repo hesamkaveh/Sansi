@@ -1,10 +1,6 @@
 import React, {Component} from "react"
-import PostIcons from "../components/PostIcons"
 // import Img from "gatsby-image"
-import Layout from "../components/layout"
-import Helmet from "react-helmet";
 import styled from "styled-components";
-import axios from 'axios';
 
 const CommentContainer = styled.div`
 display:block;
