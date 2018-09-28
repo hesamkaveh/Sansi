@@ -63,12 +63,21 @@ box-shadow: 0px 0px 3px 0px rgba(42, 183, 246, 0.59);
 font-weight: 300
 }
 `
+const Children = styled.div`
+margin: 20px 45px 0 0;
+`
 
 class Comment extends Component {
 
-    render() {
-        const data = this.props.data
 
+    Inserter() {
+        const id = this.props.id
+        const data = this.props.data.find(x => x.id === id)
+        let IsEnd;
+
+        if (this.props.ParentsId[id].length === 0) {
+            IsEnd = 1
+        }
         return (
             <CommentContainer>
 
@@ -79,14 +88,24 @@ class Comment extends Component {
                         <Date>19/12/1375</Date>
                         <Reply>پاسخ</Reply>
                     </Header>
-                    <Content>
-                        یچیز دیگرم اضافه کنم…. نوشتن به مرور یاد میده چطوری اطلاعاتو دسته بندی شده از ذهنم خارج کنم.
-                        خیلی وقتا راجع به چیزی اطلاعاتی داریم ولی به هردلیلی نمیتونیم خوب بیانش کنیم…. اما نوشتن به رفع
-                        این مشکل یا تقویت این توانایی کمک میکنه
-                    </Content>
+                    <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
                 </InnerContainer>
+                {IsEnd ? null : this.props.ParentsId[id].map((id) =>
+                    <Children key={id}>
+                        <Comment id={id} ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
+                    </Children>)}
             </CommentContainer>
-        );
+        )
+
+
+    }
+
+    render() {
+        return (
+            <div>
+                {this.Inserter()}
+            </div>
+        )
     }
 }
 

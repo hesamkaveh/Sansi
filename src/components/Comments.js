@@ -10,15 +10,22 @@ class Comments extends Component {
         super(props);
         this.state = {
             AllComments: [],
+            ParentsId: {},
+            Parents:[],
         }
     }
 
     QueryData(id) {
-        axios.get(`https://back.hesamkaveh.com/wp-json/wp/v2/comments?post=${id}`)
+        axios.get(`https://back.hesamkaveh.com/wp-json/wp/v2/comments?order=asc&post=${id}`)
             .then(response => {
                 const data = response.data;
+                const ParentNode = {}
+                const Parents=[]
+                data.map((node) => (  ParentNode[node.id]=[] ,(node.parent==0?Parents.push(node.id):null) , (data.map((node2) => (node.id === node2.parent ? ParentNode[node.id].push(node2.id) : null)))))
                 this.setState({
                     AllComments: data,
+                    ParentsId:ParentNode,
+                    Parents:Parents
                 })
             })
             .catch(error => {
@@ -33,24 +40,30 @@ class Comments extends Component {
     UNSAFE_componentWillMount() {
         this.QueryData(this.props.postId)
     }
-    componentWillUnmount () {
+
+    componentWillUnmount() {
         this._mounted = false
     }
-    componentDidMount () {
+
+    componentDidMount() {
         this._mounted = true
     }
+
     //
     // shouldComponentUpdate(nextProps, nextState) {
     //     this.QueryData(nextProps.postId)
     //     console.log(nextProps)
     //     return true;
     // }
+xxx(){
 
+}
 
     render() {
         return (
             <div>
-                {this.state.AllComments.map((comment) => <Comment data={comment} key={comment.id}/>)}
+                    {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId} data={this.state.AllComments} key={id}/>)}
+                {/*{this.xxx()}*/}
             </div>
         );
     }
