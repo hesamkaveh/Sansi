@@ -155,4 +155,11 @@ p {
 .postContainer{
     margin: 70px 0px 40px 0px;
 }
+strong {
+    font-weight: 500;
+    color: #333;
+}
+.content li {
+    margin: 10px 0;
+}
 `

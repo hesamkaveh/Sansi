@@ -56,11 +56,6 @@ class PostTemplate extends Component {
     }
 }
 
-PostTemplate.propTypes = {
-    data: PropTypes.object.isRequired,
-    edges: PropTypes.array,
-}
-
 export default PostTemplate
 
 export const pageQuery = graphql`
