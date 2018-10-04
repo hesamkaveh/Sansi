@@ -46,7 +46,7 @@ class PostTemplate extends Component {
                     <PostIcons node={post}/>
                     {post.featured_media ? <img alt='' className="FeaturedPostImg"
                                                 src={`https://back.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
-                    <div className='content' dangerouslySetInnerHTML={{__html: post.content}}/>
+                    <div id='content' dangerouslySetInnerHTML={{__html: post.content}}/>
                     <hr/>
                     {post.tags ? <Tags tags={post.tags}/> : null}
                 </div>

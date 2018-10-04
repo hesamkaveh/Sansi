@@ -94,10 +94,10 @@ a:hover {
     color: unset;
     text-decoration: none;
 }
-.content a{
+#content a{
     color: #0288d1 !important;
 }
-.content a:hover{
+#content a:hover{
     color: #005b9f !important;
 }
 
@@ -115,16 +115,16 @@ code {
 code, kbd, pre, samp {
     font-family: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
 }
-.content{
+#content{
     color: #444;
 }
-.content h1,.content h2, .content h3 , .content h4 , .content h5, .content h6{
+#content h1,#content h2, #content h3 , #content h4 , #content h5, #content h6{
      margin-top: 40px;
      margin-bottom: 10px;
      
      }
 
-.content img {
+#content img {
     margin: 0 auto;
     display: block;
     width: 100%;
@@ -159,7 +159,7 @@ strong {
     font-weight: 500;
     color: #333;
 }
-.content li {
+#content li {
     margin: 10px 0;
 }
 `
