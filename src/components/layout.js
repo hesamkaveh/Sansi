@@ -5,7 +5,7 @@ import Slider from "./Slider";
 // import PropTypes from "prop-types"
 import {graphql, StaticQuery} from "gatsby";
 import {Helmet} from "react-helmet";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import '../global-styles'
 import favicon from '../images/favicon.ico'
 
@@ -56,14 +56,29 @@ const Col = styled.div`
     width: 100%;
     
 `;
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+`;
 const HotPlace = styled(Col)`
     max-width: 780px;
     margin: 0 auto;
+            animation: ${fadeIn} 300ms linear;
+
 `;
 const SliderContainer = styled(Col)`
     max-width: 780px;
     margin: 0 auto;
 `;
+
+
+
+
 export default ({children}) => (
     <StaticQuery
         query={graphql`
@@ -92,6 +107,7 @@ site {
                   }
           }
     `}
+
         render={data => (
             <Container className='container-fluid' style={{direction: "rtl"}}>
                 <Helmet>
