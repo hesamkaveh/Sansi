@@ -16,7 +16,7 @@ class Comments extends Component {
     }
 
     QueryData(id) {
-        axios.get(`https://back.hesamkaveh.com/wp-json/wp/v2/comments?order=asc&post=${id}`)
+        axios.get(`https://backend.hesamkaveh.com/wp-json/wp/v2/comments?order=asc&post=${id}`)
             .then(response => {
                 const data = response.data;
                 const ParentNode = {}

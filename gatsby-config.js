@@ -14,8 +14,8 @@ module.exports = {
         {
             resolve: `gatsby-source-wordpress`,
             options: {
-                baseUrl: `back.hesamkaveh.com`,
-                protocol: `http`, // The protocol. This can be http or https.
+                baseUrl: `backend.hesamkaveh.com`,
+                protocol: `https`, // The protocol. This can be http or https.
                 // Indicates whether the site is hosted on wordpress.com.
                 // If false, then the asumption is made that the site is self hosted.
                 // If true, then the plugin will source its content on wordpress.com using the JSON REST API V2.
@@ -82,7 +82,7 @@ module.exports = {
                                 console.log(edge);
                                 return Object.assign({}, edge.node.title, {
                                     title:edge.node.title,
-                                    description: edge.node.excerpt.replace(`https://back.hesamkaveh.com/${edge.node.date}`,"https://hesamkaveh.com"),
+                                    description: edge.node.excerpt.replace(`https://backend.hesamkaveh.com/${edge.node.date}`,"https://hesamkaveh.com"),
                                     url: site.siteMetadata.siteUrl + edge.node.slug,
                                     guid: site.siteMetadata.siteUrl + edge.node.slug,
                                     custom_elements: [{ "content:encoded": edge.node.content }],

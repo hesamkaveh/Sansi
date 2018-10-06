@@ -47,7 +47,7 @@ class PostTemplate extends Component {
                     <Title dangerouslySetInnerHTML={{__html: post.title}}/>
                     <PostIcons node={post}/>
                     {post.featured_media ? <img alt='' className="FeaturedPostImg"
-                                                src={`https://back.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
+                                                src={`https://backend.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
                     <div id='content' dangerouslySetInnerHTML={{__html: post.content}}/>
                     <hr/>
                     {post.tags ? <Tags tags={post.tags}/> : null}
