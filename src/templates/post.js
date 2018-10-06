@@ -8,6 +8,7 @@ import Layout from "../components/layout"
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Comments from '../components/Comments'
+
 const Title = styled.h1`
     display: table;
     font-size: 28px;
@@ -31,8 +32,9 @@ class PostTemplate extends Component {
                     <meta property="og:description" content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
                     <meta property="og:site_name" content={post.title}/>
                     <meta property="og:type" content="article"/>
-
-                    {post.tags ? post.tags.map((tag) => <meta key={2} property="article:tag" content={tag.name}/>) : null}
+                    <meta property="article:published_time" content={post.publish_date}/>
+                    {post.tags ? post.tags.map((tag) => <meta key={2} property="article:tag"
+                                                              content={tag.name}/>) : null}
                     {post.tags ? <meta property="article:section" content={post.tags[0].name}/> : null}
                     {/*TODO: add date*/}
                     <meta name="twitter:description"
@@ -65,6 +67,7 @@ export const pageQuery = graphql`
         wordpress_id
         content
         date(formatString: "YYYY,M,DD")
+        publish_date:date
         tags {
         name
         slug
