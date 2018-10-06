@@ -49,8 +49,8 @@ class PostPrev extends Component {
                     <img alt='' className="FeaturedPostImg" src={`https://back.hesamkaveh.com/wp-content/uploads/${node.featured_media.media_details.file}`}/> : null}
                 {/*check have more content or seamless*/}
                 {node.content.includes("<!--more-->") ?
-                    <div className="content" dangerouslySetInnerHTML={{__html: node.content.split("<!--more-->")[0]}}/> :
-                    <div className="content" dangerouslySetInnerHTML={{__html: node.content}}/>
+                    <div id="content" dangerouslySetInnerHTML={{__html: node.content.split("<!--more-->")[0]}}/> :
+                    <div id="content" dangerouslySetInnerHTML={{__html: node.content}}/>
                 }
                 <ContinueBtn to={node.slug}>
                     ادامه مطلب←
