@@ -125,15 +125,12 @@ code, kbd, pre, samp {
      }
 
 #content img {
-    margin: 0 auto;
-    display: block;
-    width: 100%;
-    height: auto;
+display: block;
+height: auto;
+max-width: 100%;
 }
 
- h3 {
-    font-size: 1.75rem;
-}
+
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
     font-weight: 500;
 }
