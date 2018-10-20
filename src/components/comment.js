@@ -49,7 +49,7 @@ const InnerContainer = styled.div`
 margin: 0 70px 0 0;
 `
 
-const Reply = styled.div`
+const Reply = styled.button`
 color: #29b6f6;
 float: left;
 position: absolute;
@@ -60,7 +60,15 @@ padding: 1px 9px;
 border-radius: 1px;
 cursor: pointer;
 box-shadow: 0px 0px 3px 0px rgba(42, 183, 246, 0.59);
-font-weight: 300
+font-weight: 300;
+background-color:#fff;
+font-family: inherit;
+transition: all linear 0.1s;
+:hover{
+color: #005b9f;
+border-color: #005b9f;
+
+}
 }
 `
 const Children = styled.div`
