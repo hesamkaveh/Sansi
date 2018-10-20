@@ -47,6 +47,7 @@ line-height:20px;
 
 const InnerContainer = styled.div`
 margin: 0 70px 0 0;
+border-bottom:1px solid rgba(0,0,0,.1);
 `
 
 const Reply = styled.button`
@@ -67,6 +68,7 @@ transition: all linear 0.1s;
 :hover{
 color: #005b9f;
 border-color: #005b9f;
+font-weight: 400;
 
 }
 }
@@ -76,7 +78,18 @@ margin: 20px 45px 0 0;
 `
 
 class Comment extends Component {
-
+    constructor(props) {
+        super(props);
+        this.reply = React.createRef();
+    }
+    NewComment(){
+        console.log('new Comment')
+        console.log( this.reply.current)
+        this.reply.current.props.children+="12121"
+        return (
+            <div>کامنت جدید</div>
+        )
+    }
 
     Inserter() {
         const id = this.props.id
@@ -94,12 +107,12 @@ class Comment extends Component {
                     <Header>
                         <Author>{data.author_name}</Author>
                         <Date>19/12/1375</Date>
-                        <Reply>پاسخ</Reply>
+                        <Reply ref={this.reply}  onClick={()=>this.NewComment()}>پاسخ</Reply>
                     </Header>
                     <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
                 </InnerContainer>
                 {IsEnd ? null : this.props.ParentsId[id].map((id) =>
-                    <Children key={id}>
+                    <Children  contentEditable='true'  key={id}>
                         <Comment id={id} ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
                     </Children>)}
             </CommentContainer>

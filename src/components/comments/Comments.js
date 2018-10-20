@@ -3,6 +3,7 @@ import React, {Component} from "react"
 
 import axios from 'axios';
 import Comment from "./comment";
+import Reply from "./Reply";
 
 
 class Comments extends Component {
@@ -62,7 +63,8 @@ xxx(){
     render() {
         return (
             <div>
-                    {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId} data={this.state.AllComments} key={id}/>)}
+                <Reply/>
+                {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId} data={this.state.AllComments} key={id}/>)}
                 {/*{this.xxx()}*/}
             </div>
         );

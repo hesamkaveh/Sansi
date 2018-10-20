@@ -7,7 +7,7 @@ import Tags from "../components/Tags"
 import Layout from "../components/layout"
 import Helmet from "react-helmet";
 import styled from "styled-components";
-import Comments from '../components/Comments'
+import Comments from '../components/comments/Comments'
 
 const Title = styled.h1`
     display: table;

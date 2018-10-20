@@ -81,7 +81,9 @@ body {
     background: #fff;
     line-height: 1.5;
     margin: 0;
-    font-family:IRANSans
+    font-family:IRANSans;
+    font-size:16px;
+
 }
 
 a {
