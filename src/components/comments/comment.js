@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 // import Img from "gatsby-image"
 import styled from "styled-components";
+import Reply from "./Reply";
 
 const CommentContainer = styled.div`
 display:block;
@@ -50,7 +51,7 @@ margin: 0 70px 0 0;
 border-bottom:1px solid rgba(0,0,0,.1);
 `
 
-const Reply = styled.button`
+const ReplyBtn = styled.button`
 color: #29b6f6;
 float: left;
 position: absolute;
@@ -80,15 +81,19 @@ margin: 20px 45px 0 0;
 class Comment extends Component {
     constructor(props) {
         super(props);
+        this.state = {
+            replyIsSelected: false,
+            replyCommentId:0,
+        }
         this.reply = React.createRef();
     }
-    NewComment(){
+
+    NewComment() {
         console.log('new Comment')
-        console.log( this.reply.current)
-        this.reply.current.props.children+="12121"
-        return (
-            <div>کامنت جدید</div>
-        )
+        console.log(this.reply.current)
+        this.setState({
+            replyIsSelected: this.state.replyIsSelected ? false : true,
+        })
     }
 
     Inserter() {
@@ -101,20 +106,25 @@ class Comment extends Component {
         }
         return (
             <CommentContainer>
-
+                {console.log(this.super) }
                 <Avatar><img src={data.author_avatar_urls["48"]} alt=""/></Avatar>
                 <InnerContainer>
                     <Header>
                         <Author>{data.author_name}</Author>
                         <Date>19/12/1375</Date>
-                        <Reply ref={this.reply}  onClick={()=>this.NewComment()}>پاسخ</Reply>
+                        <ReplyBtn ref={this.reply} onClick={this.NewComment.bind(this)}>پاسخ</ReplyBtn>
                     </Header>
                     <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
                 </InnerContainer>
-                {IsEnd ? null : this.props.ParentsId[id].map((id) =>
-                    <Children  contentEditable='true'  key={id}>
-                        <Comment id={id} ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
-                    </Children>)}
+                {IsEnd ?
+                    <Children contentEditable='true' key={id}>
+                        <Reply replyIsSelected={this.state.replyIsSelected}/>
+                    </Children>
+                    : this.props.ParentsId[id].map((id) =>
+                        <Children contentEditable='true' key={id}>
+                            <Reply replyIsSelected={this.state.replyIsSelected}/>
+                            <Comment id={id} ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
+                        </Children>)}
             </CommentContainer>
         )
 

@@ -3,7 +3,6 @@ import React, {Component} from "react"
 
 import axios from 'axios';
 import Comment from "./comment";
-import Reply from "./Reply";
 
 
 class Comments extends Component {
@@ -13,6 +12,8 @@ class Comments extends Component {
             AllComments: [],
             ParentsId: {},
             Parents:[],
+            replyIsSelected: false,
+            replyCommentId:0,
         }
     }
 
@@ -22,7 +23,7 @@ class Comments extends Component {
                 const data = response.data;
                 const ParentNode = {}
                 const Parents=[]
-                data.map((node) => (  ParentNode[node.id]=[] ,(node.parent==0?Parents.push(node.id):null) , (data.map((node2) => (node.id === node2.parent ? ParentNode[node.id].push(node2.id) : null)))))
+                data.map((node) => (  ParentNode[node.id]=[] ,(node.parent===0?Parents.push(node.id):null) , (data.map((node2) => (node.id === node2.parent ? ParentNode[node.id].push(node2.id) : null)))))
                 this.setState({
                     AllComments: data,
                     ParentsId:ParentNode,
@@ -63,7 +64,6 @@ xxx(){
     render() {
         return (
             <div>
-                <Reply/>
                 {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId} data={this.state.AllComments} key={id}/>)}
                 {/*{this.xxx()}*/}
             </div>
