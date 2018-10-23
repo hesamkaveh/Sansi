@@ -1,6 +1,5 @@
 import React, {Component} from "react"
 import {graphql} from "gatsby"
-import PropTypes from "prop-types"
 import PostIcons from "../components/PostIcons"
 import Tags from "../components/Tags"
 // import Img from "gatsby-image"
@@ -19,6 +18,10 @@ const Title = styled.h1`
 `;
 
 class PostTemplate extends Component {
+    constructor(props) {
+        super(props);
+        this.CommentRef = React.createRef();
+    }
     render() {
         const post = this.props.data.wordpressPost
 
@@ -52,7 +55,7 @@ class PostTemplate extends Component {
                     <hr/>
                     {post.tags ? <Tags tags={post.tags}/> : null}
                 </div>
-                <Comments postId={post.wordpress_id}/>
+                <Comments ref={this.CommentRef} postId={post.wordpress_id}/>
             </Layout>
         )
     }
