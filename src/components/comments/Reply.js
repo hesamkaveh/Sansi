@@ -1,9 +1,8 @@
 import React, {Component} from 'react';
-import {Link} from "gatsby"
 import styled from "styled-components";
 import user from "../../images/user.png"
 
-const Title=styled.div`
+const Title = styled.div`
 font-weight:500;
 `;
 const ReplyContainer = styled.div`
@@ -27,7 +26,7 @@ const InputContainer = styled.div`
     border-radius: 3px;
 
 `;
-const InputCustom=styled.input`
+const InputCustom = styled.input`
     border:none;
     color: #6b7074;
     line-height: 35px;
@@ -81,11 +80,10 @@ const BTNContainer = styled.div`
 
 `;
 
-class Header extends Component {
+class Reply extends Component {
 
     render() {
-        {console.log(this.props.replyIsSelected)}
-        if (this.props.replyIsSelected){
+        if (this.props.replyIsSelected) {
             return (
                 <div>
                     <Title>دیدگاه شما</Title>
@@ -93,17 +91,17 @@ class Header extends Component {
                         <Avatar src={user} alt=""/>
                         <InputUserDetailContainer>
                             <InputContainer>
-                                <InputUserDetail type="text" name="author" className="input form-control" placeholder="نام * "
+                                <InputUserDetail type="text" name="author"
+                                                 placeholder="نام * "
                                                  tabIndex="1"/>
                             </InputContainer>
                             <InputContainer>
-                                <InputUserDetail type="email" name="email" type="email" className="input form-control"
+                                <InputUserDetail type="email" name="email"
                                                  placeholder="ایمیل * " tabIndex="2"/>
                             </InputContainer>
                         </InputUserDetailContainer>
                         <div className="comment-form-comment">
-                            <CommentTextArea id="comment" name="comment" className="form-control"
-                                             cols="45" rows="8" aria-required="true"
+                            <CommentTextArea id="comment" name="comment" aria-required="true"
                                              placeholder="دیدگاه"/>
                         </div>
                         <hr/>
@@ -115,10 +113,10 @@ class Header extends Component {
             );
 
 
-        }else{
-            return('ssssssssssssssssssss')
+        } else {
+            return (null)
         }
     }
 }
 
-export default Header;
+export default Reply;

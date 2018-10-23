@@ -83,14 +83,13 @@ class Comment extends Component {
         super(props);
         this.state = {
             replyIsSelected: false,
-            replyCommentId:0,
+            replyCommentId: 0,
         }
         this.reply = React.createRef();
     }
 
     NewComment() {
         console.log('new Comment')
-        console.log(this.reply.current)
         this.setState({
             replyIsSelected: this.state.replyIsSelected ? false : true,
         })
@@ -100,13 +99,11 @@ class Comment extends Component {
         const id = this.props.id
         const data = this.props.data.find(x => x.id === id)
         let IsEnd;
-
         if (this.props.ParentsId[id].length === 0) {
             IsEnd = 1
         }
         return (
             <CommentContainer>
-                {console.log(this.super) }
                 <Avatar><img src={data.author_avatar_urls["48"]} alt=""/></Avatar>
                 <InnerContainer>
                     <Header>
@@ -117,11 +114,11 @@ class Comment extends Component {
                     <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
                 </InnerContainer>
                 {IsEnd ?
-                    <Children contentEditable='true' key={id}>
+                    <Children key={id}>
                         <Reply replyIsSelected={this.state.replyIsSelected}/>
                     </Children>
                     : this.props.ParentsId[id].map((id) =>
-                        <Children contentEditable='true' key={id}>
+                        <Children key={id}>
                             <Reply replyIsSelected={this.state.replyIsSelected}/>
                             <Comment id={id} ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
                         </Children>)}

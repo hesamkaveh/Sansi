@@ -11,9 +11,9 @@ class Comments extends Component {
         this.state = {
             AllComments: [],
             ParentsId: {},
-            Parents:[],
+            Parents: [],
             replyIsSelected: false,
-            replyCommentId:0,
+            replyCommentId: 0,
         }
     }
 
@@ -22,12 +22,16 @@ class Comments extends Component {
             .then(response => {
                 const data = response.data;
                 const ParentNode = {}
-                const Parents=[]
-                data.map((node) => (  ParentNode[node.id]=[] ,(node.parent===0?Parents.push(node.id):null) , (data.map((node2) => (node.id === node2.parent ? ParentNode[node.id].push(node2.id) : null)))))
+                const Parents = []
+                data.map((node) => (ParentNode[node.id] = []
+                    , (node.parent === 0 ? Parents.push(node.id) : null) ,
+                    (data.map((node2) =>
+                        (node.id === node2.parent ? ParentNode[node.id].push(node2.id) :
+                            null)))))
                 this.setState({
                     AllComments: data,
-                    ParentsId:ParentNode,
-                    Parents:Parents
+                    ParentsId: ParentNode,
+                    Parents: Parents
                 })
             })
             .catch(error => {
@@ -57,15 +61,12 @@ class Comments extends Component {
     //     console.log(nextProps)
     //     return true;
     // }
-xxx(){
-
-}
 
     render() {
         return (
             <div>
-                {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId} data={this.state.AllComments} key={id}/>)}
-                {/*{this.xxx()}*/}
+                {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId}
+                                                         data={this.state.AllComments} key={id}/>)}
             </div>
         );
     }
