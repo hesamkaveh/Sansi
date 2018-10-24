@@ -3,6 +3,7 @@ import React, {Component} from "react"
 
 import axios from 'axios';
 import Comment from "./comment";
+import Reply from "./Reply";
 
 
 class Comments extends Component {
@@ -12,7 +13,7 @@ class Comments extends Component {
             AllComments: [],
             ParentsId: {},
             Parents: [],
-            replyCommentId: 0,
+            replyCommentId: -1,
         }
         this.handler_ReplyChange = this.handler_ReplyChange.bind(this)
 
@@ -21,6 +22,7 @@ class Comments extends Component {
 
     handler_ReplyChange(x) {
         x.preventDefault()
+        console.log(x.target.value)
         this.setState({
             replyCommentId: parseInt(x.target.value)
         })
@@ -74,6 +76,7 @@ class Comments extends Component {
     render() {
         return (
             <div>
+                {this.state.replyCommentId===-1?<Reply onTop />:null}
                 {this.state.Parents.map((id) => <Comment handler_ReplyChange={this.handler_ReplyChange}
                                                          replyCommentId={this.state.replyCommentId}
                                                          replyIsSelected={this.state.replyIsSelected} id={id}

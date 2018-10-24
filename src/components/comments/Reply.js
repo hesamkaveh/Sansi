@@ -2,8 +2,27 @@ import React, {Component} from 'react';
 import styled, {keyframes} from "styled-components";
 import user from "../../images/user.png"
 
-const Title = styled.div`
-font-weight:500;
+const Title = styled.button`
+    all:unset;
+    font-weight:500;
+    display: inline-block;
+
+`;
+const Title2 = styled(Title)`
+    margin-right: 25px;
+    padding:0 5px;
+    font-weight:400;
+    opacity: 0.8;
+    span{
+        font-size:20px;
+
+    }
+    cursor: pointer;
+    transition:all linear 90ms;
+    :hover{
+        opacity: 1;
+
+    }
 `;
 const ReplyContainer = styled.div`
     position: relative;
@@ -91,12 +110,15 @@ const fadeIn = keyframes`
 const CommentContainer = styled.div`
     animation: ${fadeIn} 200ms linear;
 `;
+
 class Reply extends Component {
 
     render() {
         return (
             <CommentContainer>
                 <Title>دیدگاه شما</Title>
+                {this.props.onTop?null:<Title2 value={-1} onClick={this.props.handler_ReplyChange}><span>× </span>انصراف</Title2>}
+
                 <ReplyContainer>
                     <Avatar src={user} alt=""/>
                     <InputUserDetailContainer>
