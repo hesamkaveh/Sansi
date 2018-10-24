@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 import user from "../../images/user.png"
 
 const Title = styled.div`
@@ -79,12 +79,23 @@ const BTNContainer = styled.div`
     width:100%
 
 `;
+const fadeIn = keyframes`
+  from {
+    opacity: 0.1;
+  }
 
+  to {
+    opacity: 1;
+  }
+`;
+const CommentContainer = styled.div`
+    animation: ${fadeIn} 200ms linear;
+`;
 class Reply extends Component {
 
     render() {
         return (
-            <div>
+            <CommentContainer>
                 <Title>دیدگاه شما</Title>
                 <ReplyContainer>
                     <Avatar src={user} alt=""/>
@@ -108,7 +119,7 @@ class Reply extends Component {
                         <Submit>ارسال دیدگاه</Submit>
                     </BTNContainer>
                 </ReplyContainer>
-            </div>
+            </CommentContainer>
         );
     }
 }
