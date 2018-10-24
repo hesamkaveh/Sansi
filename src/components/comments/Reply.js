@@ -83,39 +83,33 @@ const BTNContainer = styled.div`
 class Reply extends Component {
 
     render() {
-        if (1) {
-            return (
-                <div>
-                    <Title>دیدگاه شما</Title>
-                    <ReplyContainer>
-                        <Avatar src={user} alt=""/>
-                        <InputUserDetailContainer>
-                            <InputContainer>
-                                <InputUserDetail type="text" name="author"
-                                                 placeholder="نام * "
-                                                 tabIndex="1"/>
-                            </InputContainer>
-                            <InputContainer>
-                                <InputUserDetail type="email" name="email"
-                                                 placeholder="ایمیل * " tabIndex="2"/>
-                            </InputContainer>
-                        </InputUserDetailContainer>
-                        <div className="comment-form-comment">
-                            <CommentTextArea id="comment" name="comment" aria-required="true"
-                                             placeholder="دیدگاه"/>
-                        </div>
-                        <hr/>
-                        <BTNContainer>
-                            <Submit>ارسال دیدگاه</Submit>
-                        </BTNContainer>
-                    </ReplyContainer>
-                </div>
-            );
-
-
-        } else {
-            return (null)
-        }
+        return (
+            <div>
+                <Title>دیدگاه شما</Title>
+                <ReplyContainer>
+                    <Avatar src={user} alt=""/>
+                    <InputUserDetailContainer>
+                        <InputContainer>
+                            <InputUserDetail type="text" name="author"
+                                             placeholder="نام * "
+                                             tabIndex="1"/>
+                        </InputContainer>
+                        <InputContainer>
+                            <InputUserDetail type="email" name="email"
+                                             placeholder="ایمیل * " tabIndex="2"/>
+                        </InputContainer>
+                    </InputUserDetailContainer>
+                    <div className="comment-form-comment">
+                        <CommentTextArea id="comment" name="comment" aria-required="true"
+                                         placeholder="دیدگاه"/>
+                    </div>
+                    <hr/>
+                    <BTNContainer>
+                        <Submit>ارسال دیدگاه</Submit>
+                    </BTNContainer>
+                </ReplyContainer>
+            </div>
+        );
     }
 }
 
