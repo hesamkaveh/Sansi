@@ -67,11 +67,10 @@ background-color:#fff;
 font-family: inherit;
 transition: all linear 0.1s;
 :hover{
-color: #005b9f;
-border-color: #005b9f;
-font-weight: 400;
-
-}
+    color: #005b9f;
+    border-color: #005b9f;
+    font-weight: 400;
+    }
 }
 `
 const Children = styled.div`
@@ -79,26 +78,11 @@ margin: 20px 45px 0 0;
 `
 
 class Comment extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            replyIsSelected: false,
-            replyCommentId: 0,
-        }
-        this.reply = React.createRef();
-    }
-
-    NewComment() {
-        console.log('new Comment')
-        this.setState({
-            replyIsSelected: this.state.replyIsSelected ? false : true,
-        })
-    }
 
     Inserter() {
         const id = this.props.id
         const data = this.props.data.find(x => x.id === id)
-        let IsEnd;
+        var IsEnd;
         if (this.props.ParentsId[id].length === 0) {
             IsEnd = 1
         }
@@ -109,19 +93,19 @@ class Comment extends Component {
                     <Header>
                         <Author>{data.author_name}</Author>
                         <Date>19/12/1375</Date>
-                        <ReplyBtn ref={this.reply} onClick={this.NewComment.bind(this)}>پاسخ</ReplyBtn>
+                        <ReplyBtn value={id} onClick={this.props.handler_ReplyChange}>پاسخ</ReplyBtn>
                     </Header>
                     <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
                 </InnerContainer>
-                {IsEnd ?
-                    <Children key={id}>
-                        <Reply replyIsSelected={this.state.replyIsSelected}/>
-                    </Children>
-                    : this.props.ParentsId[id].map((id) =>
-                        <Children key={id}>
-                            <Reply replyIsSelected={this.state.replyIsSelected}/>
-                            <Comment id={id} ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
-                        </Children>)}
+
+                <Children>
+                    {this.props.replyCommentId === id ? <Reply/> : null}
+                    {IsEnd ? null : this.props.ParentsId[id].map((id) =>
+                        <div key={id}>
+                            <Comment replyCommentId={this.props.replyCommentId} handler_ReplyChange={this.props.handler_ReplyChange} id={id}
+                                     ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
+                        </div>)}
+                </Children>
             </CommentContainer>
         )
 

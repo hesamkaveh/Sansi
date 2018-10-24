@@ -83,7 +83,7 @@ const BTNContainer = styled.div`
 class Reply extends Component {
 
     render() {
-        if (this.props.replyIsSelected) {
+        if (1) {
             return (
                 <div>
                     <Title>دیدگاه شما</Title>

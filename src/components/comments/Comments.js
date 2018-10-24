@@ -12,9 +12,20 @@ class Comments extends Component {
             AllComments: [],
             ParentsId: {},
             Parents: [],
-            replyIsSelected: false,
             replyCommentId: 0,
         }
+        this.handler_ReplyChange = this.handler_ReplyChange.bind(this)
+
+
+    }
+
+    handler_ReplyChange(x) {
+        x.preventDefault()
+        var d = parseInt(x.target.value)
+        console.log(d)
+        this.setState({
+            replyCommentId: d
+        })
     }
 
     QueryData(id) {
@@ -65,7 +76,10 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                {this.state.Parents.map((id) => <Comment id={id} ParentsId={this.state.ParentsId}
+                {this.state.Parents.map((id) => <Comment handler_ReplyChange={this.handler_ReplyChange}
+                                                         replyCommentId={this.state.replyCommentId}
+                                                         replyIsSelected={this.state.replyIsSelected} id={id}
+                                                         ParentsId={this.state.ParentsId}
                                                          data={this.state.AllComments} key={id}/>)}
             </div>
         );
