@@ -76,12 +76,14 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                {this.state.replyCommentId===-1?<Reply onTop />:null}
+                {this.state.replyCommentId===-1?<Reply postId={this.props.postId} parentId={-1} onTop />:null}
                 {this.state.Parents.map((id) => <Comment handler_ReplyChange={this.handler_ReplyChange}
                                                          replyCommentId={this.state.replyCommentId}
                                                          replyIsSelected={this.state.replyIsSelected} id={id}
                                                          ParentsId={this.state.ParentsId}
-                                                         data={this.state.AllComments} key={id}/>)}
+                                                         data={this.state.AllComments}
+                                                         postId={this.props.postId}
+                                                         key={id}/>)}
             </div>
         );
     }

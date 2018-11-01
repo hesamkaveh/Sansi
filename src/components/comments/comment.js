@@ -99,10 +99,10 @@ class Comment extends Component {
                 </InnerContainer>
 
                 <Children>
-                    {this.props.replyCommentId === id ? <Reply handler_ReplyChange={this.props.handler_ReplyChange} /> : null}
+                    {this.props.replyCommentId === id ? <Reply postId={this.props.postId} parentId={id} handler_ReplyChange={this.props.handler_ReplyChange} /> : null}
                     {IsEnd ? null : this.props.ParentsId[id].map((id) =>
                         <div key={id}>
-                            <Comment replyCommentId={this.props.replyCommentId} handler_ReplyChange={this.props.handler_ReplyChange} id={id}
+                            <Comment postId={this.props.postId} replyCommentId={this.props.replyCommentId} handler_ReplyChange={this.props.handler_ReplyChange} id={id}
                                      ParentsId={this.props.ParentsId} data={this.props.data} key={id}/>
                         </div>)}
                 </Children>

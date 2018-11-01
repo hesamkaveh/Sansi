@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from "styled-components";
 import user from "../../images/user.png"
+import axios from "axios";
 
 const Title = styled.button`
     all:unset;
@@ -24,7 +25,7 @@ const Title2 = styled(Title)`
 
     }
 `;
-const ReplyContainer = styled.div`
+const ReplyContainer = styled.form`
     position: relative;
     display:block;
     width:100%;
@@ -51,9 +52,11 @@ const InputCustom = styled.input`
     line-height: 35px;
     color: #6b7074;
     font-size:16px;
-
+    :required{
+        box-shadow: unset;
+    }
     :focus{
-    outline: unset;
+        outline: unset;
     }
 `;
 const InputUserDetail = styled(InputCustom)`
@@ -79,6 +82,9 @@ const CommentTextArea = styled.textarea`
     :focus{
         outline: unset;
     }
+    :required{
+          box-shadow: unset;
+    }
 `;
 
 const Submit = styled.button`
@@ -92,6 +98,15 @@ const Submit = styled.button`
     color: #6b7074;
     cursor: pointer;
     border-radius: 50px;
+    transition:all linear 0.08s;
+    :hover{
+        border-color:#bbb;
+        color:#444;
+        }
+    :focus{
+        border-color:#aaa;
+        color:#444;
+    }
 `;
 const BTNContainer = styled.div`
     display:inline-block;
@@ -110,35 +125,108 @@ const fadeIn = keyframes`
 const CommentContainer = styled.div`
     animation: ${fadeIn} 200ms linear;
 `;
+const CommentSentStatus = styled.div`
+    position: absolute;
+    width: 100%;
+    background-color: #eee;
+    height: 100%;
+    margin: -20px -30px;
+    opacity: 0.8;
+    color: #000;
+    text-align: center;
+    padding-top: 21%;
+    transition:all linear 0.2s;
+`
+;
 
 class Reply extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            author: '',
+            email: '',
+            comment: '',
+            showStatus: 0,
+        }
+
+    }
+
+    sendComment(e) {
+        e.preventDefault()
+        axios.post(`https://backend.hesamkaveh.com/wp-json/wp/v2/comments?author_name=${this.state.author}&author_email=${this.state.email}&content=${this.state.comment}&post=${this.props.postId}&parent=${this.props.parentId}`)
+            .then(response => {
+                this.setState({
+                    showStatus: 1,
+                })
+                setTimeout(() => (this.setState({
+                    showStatus: 0,
+                }),
+                document.getElementById('exitBtn').click()
+                ), 5000);
+            })
+    }
+
+    handleChange(event) {
+        switch ((event.target.name.toString())) {
+            case "author":
+                this.setState({author: event.target.value})
+                break;
+            case "email":
+                this.setState({email: event.target.value})
+                break;
+            case "comment":
+                this.setState({comment: event.target.value})
+                break;
+        }
+    }
 
     render() {
         return (
             <CommentContainer>
                 <Title>دیدگاه شما</Title>
-                {this.props.onTop?null:<Title2 value={-1} onClick={this.props.handler_ReplyChange}><span>× </span>انصراف</Title2>}
+                {this.props.onTop ? null :
+                    <Title2 id="exitBtn" value={-1} onClick={this.props.handler_ReplyChange}><span>× </span>انصراف</Title2>}
 
-                <ReplyContainer>
+                <ReplyContainer onSubmit={this.sendComment.bind(this)} parentId={this.props.parentId}>
+                    {this.state.showStatus ?
+                        <CommentSentStatus>
+                            نظر شما پس از تایید نمایش داده میشه
+                            <br/>
+                            مرسی بابت نظرت :)
+                        </CommentSentStatus> : null
+                    }
+
                     <Avatar src={user} alt=""/>
                     <InputUserDetailContainer>
                         <InputContainer>
-                            <InputUserDetail type="text" name="author"
-                                             placeholder="نام * "
-                                             tabIndex="1"/>
+                            <InputUserDetail required
+                                             type="text"
+                                             name="author"
+                                             placeholder="نام *"
+                                             tabIndex="1"
+                                             onChange={this.handleChange.bind(this)}/>
                         </InputContainer>
                         <InputContainer>
-                            <InputUserDetail type="email" name="email"
-                                             placeholder="ایمیل * " tabIndex="2"/>
+                            <InputUserDetail required
+                                             type="email"
+                                             name="email"
+                                             placeholder="ایمیل *"
+                                             tabIndex="2"
+                                             onChange={this.handleChange.bind(this)}/>
                         </InputContainer>
                     </InputUserDetailContainer>
                     <div className="comment-form-comment">
-                        <CommentTextArea id="comment" name="comment" aria-required="true"
-                                         placeholder="دیدگاه"/>
+                        <CommentTextArea required
+                                         name="comment"
+                                         placeholder="دیدگاه"
+                                         tabIndex="3"
+                                         onChange={this.handleChange.bind(this)}/>
                     </div>
                     <hr/>
                     <BTNContainer>
-                        <Submit>ارسال دیدگاه</Submit>
+                        <Submit tabIndex="4"
+                                type="submit"
+                                children="ارسال دیدگاه"/>
                     </BTNContainer>
                 </ReplyContainer>
             </CommentContainer>
