@@ -2,7 +2,7 @@
   "name": "gatsby-example-using-wordpress",
   "private": true,
   "description": "Gatsby example site using the Wordpress source plugin",
-  "version": "1.0.0-beta.6",
+  "version": "1.12.1",
   "author": "Sebastien Fichot <fichot.sebastien@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
@@ -14,7 +14,7 @@
     "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-react-helmet": "^3.0.0-rc.1",
-    "gatsby-plugin-sharp": "next",
+    "gatsby-plugin-sharp": "^2.0.12",
     "gatsby-plugin-styled-components": "^3.0.0-rc.5",
     "gatsby-plugin-typography": "next",
     "gatsby-source-wordpress": "next",
