@@ -20,12 +20,19 @@ const Title = styled.h1`
 const ProgressBar=styled(ReadingProgress)`
     direction: rtl;
     color: red !important;
-    height: 0.1rem;
+    height: 1.3px;
     ::-moz-progress-bar {
     background: #29d !important;
     -webkit-box-shadow: 0 0 4px #29d,0 0 4px #29d;
     box-shadow: 0 0 4px #29d,0 0 4px #29d;
 }
+  -webkit-appearance: none;
+
+ ::-webkit-progress-value{
+     background: #29d !important;
+    -webkit-box-shadow: 0 0 4px #29d,0 0 4px #29d;
+    box-shadow: 0 0 4px #29d,0 0 4px #29d;
+ }
 `;
 class PostTemplate extends Component {
     constructor(props) {
