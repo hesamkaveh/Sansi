@@ -26,6 +26,7 @@
     "react-helmet": "^5.2.0",
     "react-icons": "^2.2.7",
     "react-inlinesvg": "^0.8.1",
+    "react-reading-progress": "^0.3.0",
     "styled-components": "^3.4.6"
   },
   "keywords": [

@@ -7,6 +7,7 @@ import Layout from "../components/layout"
 import Helmet from "react-helmet";
 import styled from "styled-components";
 import Comments from '../components/comments/Comments'
+import ReadingProgress from "react-reading-progress";
 
 const Title = styled.h1`
     display: table;
@@ -16,47 +17,61 @@ const Title = styled.h1`
     margin: 0 auto;
     text-align: center;
 `;
-
+const ProgressBar=styled(ReadingProgress)`
+    direction: rtl;
+    color: red !important;
+    height: 0.1rem;
+    ::-moz-progress-bar {
+    background: #29d !important;
+    -webkit-box-shadow: 0 0 4px #29d,0 0 4px #29d;
+    box-shadow: 0 0 4px #29d,0 0 4px #29d;
+}
+`;
 class PostTemplate extends Component {
     constructor(props) {
         super(props);
         this.CommentRef = React.createRef();
     }
+
     render() {
         const post = this.props.data.wordpressPost
 
         return (
-            <Layout>
-                <Helmet>
-                    <title>{post.title} | {this.props.data.site.siteMetadata.title}</title>
-                    <meta name="keywords" itemProp="keywords" key={1}
-                          content={post.tags ? post.tags.map((tag) => `${tag.name}`) : null}/>
-                    <meta property="og:title" content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
-                    <meta property="og:description" content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
-                    <meta property="og:site_name" content={post.title}/>
-                    <meta property="og:type" content="article"/>
-                    <meta property="article:published_time" content={post.publish_date}/>
-                    {post.tags ? post.tags.map((tag) => <meta key={2} property="article:tag"
-                                                              content={tag.name}/>) : null}
-                    {post.tags ? <meta property="article:section" content={post.tags[0].name}/> : null}
-                    {/*TODO: add date*/}
-                    <meta name="twitter:description"
-                          content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
-                    <meta name="twitter:title"
-                          content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
-                </Helmet>
-
-                <div className="postContainer">
-                    <Title dangerouslySetInnerHTML={{__html: post.title}}/>
-                    <PostIcons node={post}/>
-                    {post.featured_media ? <img alt='' className="FeaturedPostImg"
-                                                src={`https://backend.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
-                    <div id='content' dangerouslySetInnerHTML={{__html: post.content}}/>
-                    <hr/>
-                    {post.tags ? <Tags tags={post.tags}/> : null}
-                </div>
-                <Comments ref={this.CommentRef} postId={post.wordpress_id}/>
-            </Layout>
+            <div>
+                <ProgressBar targetEl=".postContainer"/>
+                <Layout>
+                    <Helmet>
+                        <title>{post.title} | {this.props.data.site.siteMetadata.title}</title>
+                        <meta name="keywords" itemProp="keywords" key={1}
+                              content={post.tags ? post.tags.map((tag) => `${tag.name}`) : null}/>
+                        <meta property="og:title"
+                              content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
+                        <meta property="og:description"
+                              content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
+                        <meta property="og:site_name" content={post.title}/>
+                        <meta property="og:type" content="article"/>
+                        <meta property="article:published_time" content={post.publish_date}/>
+                        {post.tags ? post.tags.map((tag) => <meta key={2} property="article:tag"
+                                                                  content={tag.name}/>) : null}
+                        {post.tags ? <meta property="article:section" content={post.tags[0].name}/> : null}
+                        {/*TODO: add date*/}
+                        <meta name="twitter:description"
+                              content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
+                        <meta name="twitter:title"
+                              content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
+                    </Helmet>
+                    <div className="postContainer">
+                        <Title dangerouslySetInnerHTML={{__html: post.title}}/>
+                        <PostIcons node={post}/>
+                        {post.featured_media ? <img alt='' className="FeaturedPostImg"
+                                                    src={`https://backend.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
+                        <div id='content' dangerouslySetInnerHTML={{__html: post.content}}/>
+                        <hr/>
+                        {post.tags ? <Tags tags={post.tags}/> : null}
+                    </div>
+                    <Comments ref={this.CommentRef} postId={post.wordpress_id}/>
+                </Layout>
+            </div>
         )
     }
 }
