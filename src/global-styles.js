@@ -79,7 +79,7 @@ html {
 body {
     color: #444;
     background: #fff;
-    line-height: 1.5;
+    line-height: 1.9;
     margin: 0;
     font-family:IRANSans;
     font-size:16px;
