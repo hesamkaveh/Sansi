@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `روزنوشته‌های حسام‌ کاوه`,
-        subtitle: `مطالبی در حوزه بیزینس، برنامه نویسی و توسعه مهارت های فردی`,
+        subtitle: `با تلاش من و شما جهان بهتر خواهد شد.`,
         siteUrl:"https://hesamkaveh.com/"
 
     },
