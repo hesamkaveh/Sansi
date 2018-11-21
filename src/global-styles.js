@@ -161,4 +161,10 @@ strong {
 #content li {
     margin: 10px 0;
 }
+blockquote{
+    border-right: 2px solid #777;
+    margin: auto 0px;
+    font-weight: 400;
+    padding: 5px 20px 5px 0;
+}
 `
