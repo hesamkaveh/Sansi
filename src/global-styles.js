@@ -156,7 +156,7 @@ p {
 }
 strong {
     font-weight: 500;
-    color: #333;
+    color: #111;
 }
 #content li {
     margin: 10px 0;
