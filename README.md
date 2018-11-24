@@ -1,4 +1,4 @@
-# Waht is Sansi?
+# What is Sansi?
 Sansi is a blog template using gatsby for frontend and wordpress for backend.
 
 # Installation
@@ -30,7 +30,8 @@ If data fetched with no error, open localhost:8000 to see website
 # TODO
 - [ ] Fix Rss file in standard way
 - [ ] Load image in multiple resolutions
-- [ ] Add commenting system
+- [x] Add commenting system
+- [ ] Add subscribe btn to commenting system
 - [ ] Add Date in post detail
 - [ ] Fix in safari
 
