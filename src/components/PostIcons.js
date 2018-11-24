@@ -57,7 +57,7 @@ class PostIcons extends React.Component {
         return (
             <PostDetail>
                                 <span>
-                                    <img src={dateSvg} alt="logo"/>
+                                    <img width='15px' height='15px' src={dateSvg} alt="date"/>
                                     {' '}
                                     {jalali.jd} {' '}
                                     {this.monthToString(jalali.jm)} {' '}
