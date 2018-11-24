@@ -39,13 +39,12 @@ module.exports = {
             options: {
                 trackingId: "UA-125787492-1",
                 // Puts tracking script in the head instead of the body
-                head: true,
+                head: false,
                 // Setting this parameter is optional
-                anonymize: true,
+                // anonymize: true,
                 // Setting this parameter is also optional
-                respectDNT: true,
+                // respectDNT: true,
                 // Avoids sending pageview hits from custom paths
-                exclude: ["/preview/**", "/do-not-track/me/too/"],
             },
         },
         {
