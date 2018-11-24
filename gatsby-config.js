@@ -27,6 +27,14 @@ module.exports = {
             },
         },
         {
+            resolve: 'gatsby-plugin-robots-txt',
+            options: {
+                host: 'https://hesamkaveh.com',
+                sitemap: 'https://hesamkaveh.com/rss.xml',
+                policy: [{ userAgent: '*', allow: '/' }]
+            }
+        },
+        {
             resolve: `gatsby-plugin-google-analytics`,
             options: {
                 trackingId: "UA-125787492-1",
