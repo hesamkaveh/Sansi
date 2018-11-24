@@ -49,8 +49,8 @@ class PostPrev extends Component {
                     <img alt='' className="FeaturedPostImg" src={`https://backend.hesamkaveh.com/wp-content/uploads/${node.featured_media.media_details.file}`}/> : null}
                 {/*check have more content or seamless*/}
                 {node.content.includes("<!--more-->") ?
-                    <div id="content" dangerouslySetInnerHTML={{__html: node.content.split("<!--more-->")[0]}}/> :
-                    <div id="content" dangerouslySetInnerHTML={{__html: node.content}}/>
+                    <div id="content" dangerouslySetInnerHTML={{__html: node.content.split("<!--more-->")[0].replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads')}}/> :
+                    <div id="content" dangerouslySetInnerHTML={{__html: node.content.replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads')}}/>
                 }
                 <ContinueBtn to={node.slug}>
                     ادامه مطلب←
