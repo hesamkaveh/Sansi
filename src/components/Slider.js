@@ -54,7 +54,7 @@ const LiInSlider = styled.li`
         border-bottom: 1px dotted #aaa;
 }
 `;
-const FollowMeContainer=styled.a`
+const FollowMeContainer = styled.a`
     display: inline-block;
     margin: 0 5px;
     svg{
@@ -65,27 +65,27 @@ const FollowMeContainer=styled.a`
         border: 1px solid #ddd; 
     }
 `;
-const FollowMeContainerInsta=styled(FollowMeContainer)`
+const FollowMeContainerInsta = styled(FollowMeContainer)`
        svg:hover{
            background-color: #E42B55;
        }
 `;
-const FollowMeContainerYoutube=styled(FollowMeContainer)`
+const FollowMeContainerYoutube = styled(FollowMeContainer)`
        svg:hover{
            background-color: #FF001B;
        }
 `;
-const FollowMeContainerLinkedin=styled(FollowMeContainer)`
+const FollowMeContainerLinkedin = styled(FollowMeContainer)`
        svg:hover{
            background-color: #0077B5;
        }
 `;
-const FollowMeContainerTwitter=styled(FollowMeContainer)`
+const FollowMeContainerTwitter = styled(FollowMeContainer)`
        svg:hover{
            background-color: #1DA1F2;
        }
 `;
-const FollowMeContainerGitlab=styled(FollowMeContainer)`
+const FollowMeContainerGitlab = styled(FollowMeContainer)`
        svg:hover{
            background-color: #E24329;
        }
@@ -136,16 +136,17 @@ class Slider extends Component {
 
                 <Container>
                     <Label htmlFor="search">حسام را دنبال کنید</Label>
-                    <FollowMeContainerInsta on="instagram" href="https://www.instagram.com/hesamkaveh/">
+                    <FollowMeContainerInsta href="https://www.instagram.com/hesamkaveh/" target="_blank">
                         <InlineSVG src={instaSvg}/></FollowMeContainerInsta>
-                    <FollowMeContainerYoutube on="youtube"
-                       href="https://www.youtube.com/channel/UCyfBuLBzBIsbH6h4lXWjdlQ?view_as=subscriber">
-                        <InlineSVG src={youtubeSvg} /></FollowMeContainerYoutube>
-                    <FollowMeContainerLinkedin on="linkedin" href="www.linkedin.com/in/hesamkaveh">
+                    <FollowMeContainerYoutube
+                        href="https://www.youtube.com/channel/UCyfBuLBzBIsbH6h4lXWjdlQ?view_as=subscriber"
+                        target="_blank">
+                        <InlineSVG src={youtubeSvg}/></FollowMeContainerYoutube>
+                    <FollowMeContainerLinkedin href="https://linkedin.com/in/hesamkaveh" target="_blank">
                         <InlineSVG src={linkedinSvg}/></FollowMeContainerLinkedin>
-                    <FollowMeContainerTwitter on="twitter" href="http://twitter.com/hesamkaveh97">
+                    <FollowMeContainerTwitter href="https://twitter.com/hesamkaveh97" target="_blank">
                         <InlineSVG src={twitterSvg}/></FollowMeContainerTwitter>
-                    <FollowMeContainerGitlab on="gitlab" href="https://github.com/Hesamkaveh/">
+                    <FollowMeContainerGitlab href="https://github.com/Hesamkaveh/" target="_blank">
                         <InlineSVG src={githubSvg}/></FollowMeContainerGitlab>
                 </Container>
             </div>
