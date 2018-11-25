@@ -1,7 +1,7 @@
 module.exports = {
     siteMetadata: {
         title: `حسام‌ کاوه`,
-        subtitle: `با تلاش من و شما جهان بهتر خواهد شد.`,
+        subtitle: `با تلاش من و شما جهان بهتر خواهد شد. نوشته هایی در مورد پیشرفت شخصی، کسب و کار و برنامه نویسی`,
         siteUrl:"https://hesamkaveh.com/"
 
     },
