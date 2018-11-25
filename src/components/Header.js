@@ -26,7 +26,7 @@ class Header extends Component {
     render() {
         return (
             <div style={{textAlign: 'center'}}>
-                <Link to='/'><Logo src={logo} alt=""/></Link>
+                <Link to='/'><Logo src={logo} alt="حسام کاوه"/></Link>
                 <Title>روز نوشته های یک توسعه دهنده</Title>
                 <Navbar>
                     <NavItem to="/">بلاگ</NavItem>
