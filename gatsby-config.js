@@ -1,6 +1,6 @@
 module.exports = {
     siteMetadata: {
-        title: `روزنوشته‌های حسام‌ کاوه`,
+        title: `حسام‌ کاوه`,
         subtitle: `با تلاش من و شما جهان بهتر خواهد شد.`,
         siteUrl:"https://hesamkaveh.com/"
 
