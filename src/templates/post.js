@@ -66,6 +66,8 @@ class PostTemplate extends Component {
                               content={post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '')}/>
                         <meta name="twitter:title"
                               content={`${post.title} | ${this.props.data.site.siteMetadata.title}`}/>
+                        {post.featured_media ? <meta property="og:image" content={`https://backend.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file} /> : null}
+
                     </Helmet>
                     <div className="postContainer">
                         <Title dangerouslySetInnerHTML={{__html: post.title}}/>
