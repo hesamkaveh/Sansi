@@ -8,6 +8,7 @@ import {Helmet} from "react-helmet";
 import styled, {keyframes} from "styled-components";
 import '../global-styles'
 import favicon from '../images/favicon.ico'
+import logo from '../images/logo.jpg'
 
 const Container = styled.div`
     margin-left: auto;
@@ -77,8 +78,6 @@ const SliderContainer = styled(Col)`
 `;
 
 
-
-
 export default ({children}) => (
     <StaticQuery
         query={graphql`
@@ -111,24 +110,28 @@ site {
         render={data => (
             <Container className='container-fluid' style={{direction: "rtl"}}>
                 <Helmet>
-                    <meta charSet="utf-8"/>
+                    <html lang="fa" />
+                    <meta charSet="UTF-8"/>
                     <title>{data.site.siteMetadata.title}</title>
-                    <meta name="description"
-                          content={data.site.siteMetadata.subtitle}/>
+                    <meta name="description" content={data.site.siteMetadata.subtitle}/>
                     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
                     <meta name="theme-color" content="#fff"/>
                     <link rel="alternate" type="application/rss+xml"
                           title="RSS Feed for hesamkaveh.com"
-                          href="/rss.xml" />
-                    <link rel="Shortcut Icon" href={favicon} type="image/x-icon"/>
+                          href="/rss.xml"/>
+                    <link rel="shortcut icon" href={favicon} type="image/x-icon"/>
                     <meta name="keywords"
                           content="مطالب آموزشی, لینوکس، پایتون، توسعه فردی، دوچرخه سواری, برنامه نویسی، کامپیوتر"/>
                     <meta property="og:site_name" content={data.site.siteMetadata.title}/>
+                    <meta name="og:description" content={data.site.siteMetadata.subtitle}/>
                     <meta property="og:title" content={data.site.siteMetadata.title}/>
                     <meta property="og:locale" content="fa_IR"/>
                     <meta property="og:type" content="website"/>
+                    <meta property="og:image" content={logo}/>
                     <meta name="twitter:app:country" content="IR"/>
                     <meta name="twitter:site" content="@hesamkaveh97"/>
+                    <meta name="twitter:description"
+                          content={data.site.siteMetadata.subtitle}/>
 
                 </Helmet>
                 <Header/>
