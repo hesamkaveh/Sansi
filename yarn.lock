@@ -5451,13 +5451,6 @@ gatsby-plugin-feed@^2.0.11:
     pify "^3.0.0"
     rss "^1.2.2"
 
-gatsby-plugin-glamor@next:
-  version "2.0.0-rc.1"
-  resolved "https://registry.yarnpkg.com/gatsby-plugin-glamor/-/gatsby-plugin-glamor-2.0.0-rc.1.tgz#b6c90bae6f58cbab96d4987f8c9d9d35785d2da0"
-  integrity sha512-/nG5tDy3X9Z0+EehTAIsv7z7NS+JnJ2Y/CrcYommLhc3W0pSOXMWAbMVsE8ZCYiyYYLczdQFOAuPhlh033v6DQ==
-  dependencies:
-    "@babel/runtime" "^7.0.0"
-
 gatsby-plugin-google-analytics@^2.0.8:
   version "2.0.8"
   resolved "https://registry.yarnpkg.com/gatsby-plugin-google-analytics/-/gatsby-plugin-google-analytics-2.0.8.tgz#bef7913726e70f03533c4d14bfc73f8bd73550e0"

@@ -44,13 +44,20 @@ export const pageQuery = graphql`
           slug
                         date(formatString: "YYYY,M,DD")
 
-            featured_media {
-                media_details {
-                width
-                height
-                file
+        featured_media {
+              localFile {
+                childImageSharp{
+                  original{
+                    src
+                  }
                 }
-             }
+              }
+            media_details {
+            width
+            height
+            file
+            }
+    }
          # ...PostIcons
           
         }

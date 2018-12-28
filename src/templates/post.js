@@ -8,7 +8,6 @@ import Helmet from "react-helmet";
 import styled from "styled-components";
 import Comments from '../components/comments/Comments'
 import ReadingProgress from "react-reading-progress";
-
 const Title = styled.h1`
     display: table;
     font-size: 28px;
@@ -72,8 +71,11 @@ class PostTemplate extends Component {
                     <div className="postContainer">
                         <Title dangerouslySetInnerHTML={{__html: post.title}}/>
                         <PostIcons node={post}/>
+                        {console.log(post.featured_media.localFile.childImageSharp.original.src)}
+                        {console.log(post.featured_media.localFile.childImageSharp.original.src)}
+                        {console.log(post.featured_media.localFile.childImageSharp.original.src)}
                         {post.featured_media ? <img alt='' className="FeaturedPostImg"
-                                                    src={`https://backend.hesamkaveh.com/wp-content/uploads/` + post.featured_media.media_details.file}/> : null}
+                                                    src={ post.featured_media.localFile.childImageSharp.original.src }/> : null}
                         <div id='content' dangerouslySetInnerHTML={{__html: (post.content.replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads'))}}/>
                         <hr/>
                         {post.tags ? <Tags tags={post.tags}/> : null}
@@ -100,11 +102,18 @@ export const pageQuery = graphql`
         slug
     }
         featured_media {
-        media_details {
-        width
-        height
-        file
-    }
+              localFile {
+                childImageSharp{
+                  original{
+                    src
+                  }
+                }
+              }
+            media_details {
+            width
+            height
+            file
+            }
     }
 
         # ...PostIcons

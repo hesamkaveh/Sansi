@@ -46,7 +46,7 @@ class PostPrev extends Component {
                 </TitleLink>
                 <PostIcons node={node}/>
                 {node.featured_media ?
-                    <img alt='' className="FeaturedPostImg" src={`https://backend.hesamkaveh.com/wp-content/uploads/${node.featured_media.media_details.file}`}/> : null}
+                    <img alt='' className="FeaturedPostImg" src={ node.featured_media.localFile.childImageSharp.original.src } /> : null}
                 {/*check have more content or seamless*/}
                 {node.content.includes("<!--more-->") ?
                     <div id="content" dangerouslySetInnerHTML={{__html: node.content.split("<!--more-->")[0].replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads')}}/> :

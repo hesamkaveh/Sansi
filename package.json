@@ -10,7 +10,6 @@
     "gatsby-plugin-typography": "next",
     "gatsby-source-wordpress": "next",
     "gatsby-transformer-sharp": "next",
-    "gatsby-plugin-glamor": "next",
     "gatsby-plugin-google-analytics": "^2.0.8",
     "gatsby-plugin-canonical-urls": "^2.0.8",
     "gatsby-plugin-react-helmet": "^3.0.5",
