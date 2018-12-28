@@ -110,6 +110,7 @@ site {
         render={data => (
             <Container className='container-fluid' style={{direction: "rtl"}}>
                 <Helmet>
+                    <meta name="google-site-verification" content="BlsbMfE1ReAc7sOy18ZoTNw_hNfQJcU6ucReS5PsxFA" />
                     <html lang="fa" />
                     <meta charSet="UTF-8"/>
                     <title>{data.site.siteMetadata.title}</title>
