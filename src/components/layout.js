@@ -135,10 +135,6 @@ site {
                           content={data.site.siteMetadata.subtitle}/>
 
                 </Helmet>
-                 {/*Google Tag Manager (noscript) */}
-                <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K9M8FJ7"
-                                  height="0" width="0" style="display:none;visibility:hidden"/></noscript>
-                 {/*End Google Tag Manager (noscript) */}
                 <Header/>
                 <PageBody>
                     <HotPlace>
