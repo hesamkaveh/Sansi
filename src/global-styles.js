@@ -142,7 +142,7 @@ dl, ol, ul {
 
 p {
     margin-bottom: 1rem;
-    margin-top: 0;
+    margin-top: 1rem;
 }
  svg * {
     fill: #333 ;
@@ -166,5 +166,9 @@ blockquote{
     margin: auto 0px;
     font-weight: 400;
     padding: 5px 20px 5px 0;
+}
+figcaption {
+    text-align: center;
+    opacity: 0.8;
 }
 `

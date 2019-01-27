@@ -18,10 +18,11 @@ class PageTemplate extends Component {
                 <h1 className='categoryName'>{currentTag.name}</h1>
                 <h3 className='categoryDescription'>{currentTag.description}</h3>
                 <hr/>
-                {Posts.edges.map(({node}) => (
-                    <PostPrev node={node} key={node.slug}/>
-
-                ))}
+                {Posts ?
+                    Posts.edges.map(({node}) => (
+                        <PostPrev node={node} key={node.slug}/>
+                    )) :
+                    null}
 
             </Layout>
         )
