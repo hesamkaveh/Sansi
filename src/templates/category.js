@@ -29,10 +29,11 @@ class PageTemplate extends Component {
                 <Name>{currentCategory.name}</Name>
                 <Description>{currentCategory.description}</Description>
                 <hr/>
-                {Posts.edges.map(({node}) => (
-                    <PostPrev node={node} key={node.slug}/>
-
-                ))}
+                {Posts ?
+                    Posts.edges.map(({node}) => (
+                        <PostPrev node={node} key={node.slug}/>
+                    )) :
+                    null}
 
             </Layout>
         )
