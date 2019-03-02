@@ -89,7 +89,7 @@ module.exports = {
                                 console.log(edge);
                                 return Object.assign({}, edge.node.title, {
                                     title:edge.node.title,
-                                    description: edge.node.excerpt.replace(`https://backend.hesamkaveh.com/${edge.node.date}`,"https://hesamkaveh.com"),
+                                    description: edge.node.excerpt.replace(`https://backend.hesamkaveh.com`,"https://hesamkaveh.com"),
                                     url: site.siteMetadata.siteUrl + edge.node.slug,
                                     guid: site.siteMetadata.siteUrl + edge.node.slug,
                                     custom_elements: [{ "content:encoded": edge.node.content }],
