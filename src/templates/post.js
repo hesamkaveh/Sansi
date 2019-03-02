@@ -71,7 +71,6 @@ class PostTemplate extends Component {
                     <div className="postContainer">
                         <Title dangerouslySetInnerHTML={{__html: post.title}}/>
                         <PostIcons node={post}/>
-                        {console.log(post.featured_media.localFile.childImageSharp)}
                         {post.featured_media ? <Img alt={post.title} className="FeaturedPostImg" style={{width:'100%'}}
                                                     fluid={ post.featured_media.localFile.childImageSharp.fluid }/> : null}
                         <div id='content' dangerouslySetInnerHTML={{__html: (post.content.replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads'))}}/>
