@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import Link from "gatsby-link";
 import PostIcons from "./PostIcons";
 import styled from "styled-components";
-
+import Img from "gatsby-image";
 const TitleLink = styled(Link)`
     font-size: 28px;
     display: table;
@@ -46,7 +46,9 @@ class PostPrev extends Component {
                 </TitleLink>
                 <PostIcons node={node}/>
                 {node.featured_media ?
-                    <img alt='' className="FeaturedPostImg" src={ node.featured_media.localFile.childImageSharp.original.src } /> : null}
+                    <Link to={node.slug}>
+                    <Img alt={node.title} alt={node.title}  className="FeaturedPostImg" fluid={ node.featured_media.localFile.childImageSharp.fluid }  style={{width:'100%'}} /></Link> : null}
+
                 {/*check have more content or seamless*/}
                 {node.content.includes("<!--more-->") ?
                     <div id="content" dangerouslySetInnerHTML={{__html: node.content.split("<!--more-->")[0].replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads')}}/> :

@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import {graphql} from "gatsby"
 import PostIcons from "../components/PostIcons"
 import Tags from "../components/Tags"
-// import Img from "gatsby-image"
+import Img from "gatsby-image"
 import Layout from "../components/layout"
 import Helmet from "react-helmet";
 import styled from "styled-components";
@@ -71,8 +71,9 @@ class PostTemplate extends Component {
                     <div className="postContainer">
                         <Title dangerouslySetInnerHTML={{__html: post.title}}/>
                         <PostIcons node={post}/>
-                        {post.featured_media ? <img alt='' className="FeaturedPostImg"
-                                                    src={ post.featured_media.localFile.childImageSharp.original.src }/> : null}
+                        {console.log(post.featured_media.localFile.childImageSharp)}
+                        {post.featured_media ? <Img alt={post.title} className="FeaturedPostImg" style={{width:'100%'}}
+                                                    fluid={ post.featured_media.localFile.childImageSharp.fluid }/> : null}
                         <div id='content' dangerouslySetInnerHTML={{__html: (post.content.replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g,'https://backend.hesamkaveh.com/wp-content/uploads'))}}/>
                         <hr/>
                         {post.tags ? <Tags tags={post.tags}/> : null}
@@ -99,11 +100,12 @@ export const pageQuery = graphql`
         slug
     }
         featured_media {
+        alt_text
               localFile {
                 childImageSharp{
-                  original{
-                    src
-                  }
+                    fluid(maxWidth:750){
+              ...GatsbyImageSharpFluid
+                        }
                 }
               }
             media_details {

@@ -44,12 +44,13 @@ export const pageQuery = graphql`
           slug
                         date(formatString: "YYYY,M,DD")
 
-        featured_media {
+featured_media {
+        alt_text
               localFile {
                 childImageSharp{
-                  original{
-                    src
-                  }
+                    fluid(maxWidth:750){
+              ...GatsbyImageSharpFluid
+                        }
                 }
               }
             media_details {
