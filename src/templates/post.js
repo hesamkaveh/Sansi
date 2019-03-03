@@ -61,6 +61,7 @@ class PostTemplate extends Component {
                         <title>{title}</title>
                         <meta name="keywords" itemProp="keywords" key={1}
                               content={post.tags ? post.tags.map((tag) => `${tag.name}`) : null}/>
+                        <meta name="description" content={description}/>
                         <meta property="og:title" content={title}/>
                         <meta property="og:description" content={description}/>
                         <meta property="og:site_name" content={post.title}/>
