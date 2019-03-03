@@ -152,12 +152,12 @@ class Reply extends Component {
     }
 
     sendComment(e) {
-        e.preventDefault()
+        e.preventDefault();
         axios.post(`https://backend.hesamkaveh.com/wp-json/wp/v2/comments?author_name=${this.state.author}&author_email=${this.state.email}&content=${this.state.comment}&post=${this.props.postId}&parent=${this.props.parentId}`)
             .then(response => {
                 this.setState({
                     showStatus: 1,
-                })
+                });
                 setTimeout(() => (this.setState({
                     showStatus: 0,
                 }),
@@ -169,13 +169,13 @@ class Reply extends Component {
     handleChange(event) {
         switch ((event.target.name.toString())) {
             case "author":
-                this.setState({author: event.target.value})
+                this.setState({author: event.target.value});
                 break;
             case "email":
-                this.setState({email: event.target.value})
+                this.setState({email: event.target.value});
                 break;
             case "comment":
-                this.setState({comment: event.target.value})
+                this.setState({comment: event.target.value});
                 break;
         }
     }

@@ -7,8 +7,8 @@ import Helmet from "react-helmet";
 
 class PageTemplate extends Component {
     render() {
-        const Posts = this.props.data.allWordpressPost
-        const currentTag = this.props.data.wordpressTag
+        const Posts = this.props.data.allWordpressPost;
+        const currentTag = this.props.data.wordpressTag;
 
         return (
             <Layout>
@@ -63,4 +63,4 @@ export const pageQuery = graphql`
   
   
 
-`
+`;

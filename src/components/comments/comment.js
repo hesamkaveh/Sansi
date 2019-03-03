@@ -49,7 +49,7 @@ line-height:20px;
 const InnerContainer = styled.div`
 margin: 0 70px 0 0;
 border-bottom:1px solid rgba(0,0,0,.1);
-`
+`;
 
 const ReplyBtn = styled.button`
 color: #29b6f6;
@@ -72,16 +72,16 @@ transition: all linear 0.1s;
     font-weight: 400;
     }
 }
-`
+`;
 const Children = styled.div`
 margin: 20px 45px 0 0;
-`
+`;
 
 class Comment extends Component {
 
     Inserter() {
-        const id = this.props.id
-        const data = this.props.data.find(x => x.id === id)
+        const id = this.props.id;
+        const data = this.props.data.find(x => x.id === id);
         var IsEnd;
         if (this.props.ParentsId[id].length === 0) {
             IsEnd = 1

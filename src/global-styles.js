@@ -171,4 +171,4 @@ figcaption {
     text-align: center;
     opacity: 0.8;
 }
-`
+`;

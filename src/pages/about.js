@@ -10,7 +10,6 @@ export default (data) => (
             <title>درباره حسام | {data.data.site.siteMetadata.title}</title>
         </Helmet>
         <div className="postContainer">
-            {console.log(data)}
             <h2 style={{textAlign: 'center'}}>درباره من</h2>
             <p>
                 <img src={avatar} alt="" style={{
@@ -70,4 +69,4 @@ export const pageQuery = graphql`
 
 
 
-`
+`;

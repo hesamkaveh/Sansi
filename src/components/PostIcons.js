@@ -18,42 +18,42 @@ class PostIcons extends React.Component {
     monthToString(monthInt) {
         switch (monthInt) {
             case 1:
-                return ("فروردین")
+                return ("فروردین");
             case 2:
-                return ("اردیبهشت")
+                return ("اردیبهشت");
             case 3:
-                return ("خرداد")
+                return ("خرداد");
             case 4:
-                return ("تیر")
+                return ("تیر");
             case 5:
-                return ("مرداد")
+                return ("مرداد");
             case 6:
-                return ("شهریور")
+                return ("شهریور");
             case 7:
-                return ("مهر")
+                return ("مهر");
             case 8:
-                return ("آبان")
+                return ("آبان");
             case 9:
-                return ("آذر")
+                return ("آذر");
             case 10:
-                return ("دی")
+                return ("دی");
             case 11:
-                return ("بهمن")
+                return ("بهمن");
             case 12:
-                return ("اسفند")
+                return ("اسفند");
             default:
                 return ("")
         }
     }
 
     render() {
-        var date="2018,9,1".split(',')
+        var date="2018,9,1".split(',');
         try{
               date = (this.props.node.date.split(','))
 
         }catch (e) {
         }
-        const jalali=toJalaali(Number(date[0]),Number(date[1]),Number(date[2]))
+        const jalali=toJalaali(Number(date[0]),Number(date[1]),Number(date[2]));
         return (
             <PostDetail>
                                 <span>
@@ -85,4 +85,4 @@ export const query = graphql`
       name
     }
   }
-`
+`;

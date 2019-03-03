@@ -33,7 +33,7 @@ a:hover{
 
 class Tags extends React.Component {
     render() {
-        const {tags} = this.props
+        const {tags} = this.props;
 
         return (
             <Tag>

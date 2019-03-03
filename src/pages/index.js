@@ -7,7 +7,7 @@ import Helmet from "react-helmet";
 
 class Home extends Component {
     render() {
-        const data = this.props.data
+        const data = this.props.data;
 
         return (
             <Layout>
@@ -65,4 +65,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;

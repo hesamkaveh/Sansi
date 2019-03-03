@@ -18,8 +18,8 @@ const Description=styled.h2`
 
 class PageTemplate extends Component {
     render() {
-        const Posts = this.props.data.allWordpressPost
-        const currentCategory = this.props.data.wordpressCategory
+        const Posts = this.props.data.allWordpressPost;
+        const currentCategory = this.props.data.wordpressCategory;
 
         return (
             <Layout>
@@ -77,4 +77,4 @@ export const pageQuery = graphql`
   
   
 
-`
+`;

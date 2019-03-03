@@ -42,8 +42,8 @@ class PostTemplate extends Component {
     }
 
     render() {
-        const post = this.props.data.wordpressPost
-        let title = `${post.title} | ${this.props.data.site.siteMetadata.title}`
+        const post = this.props.data.wordpressPost;
+        let title = `${post.title} | ${this.props.data.site.siteMetadata.title}`;
 
         let description = '';
         if (post.acf !== null) {
@@ -135,4 +135,4 @@ export const pageQuery = graphql`
             }
         }
     }
-`
+`;
