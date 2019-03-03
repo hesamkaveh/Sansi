@@ -1,5 +1,5 @@
 import React, {Component} from "react"
-import { graphql} from "gatsby"
+import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev"
 import Helmet from "react-helmet";
@@ -16,7 +16,7 @@ class Home extends Component {
                 </Helmet>
 
                 {data.allWordpressPost.edges.map(({node}) => (
-                    <PostPrev node={node} key={node.slug} />
+                    <PostPrev node={node} key={node.slug}/>
 
                 ))}
             </Layout>
@@ -28,41 +28,41 @@ export default Home
 
 // Set here the ID of the home page.
 export const pageQuery = graphql`
-  query {
-  site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
-    allWordpressPost(sort: { fields: [date], order: DESC }) {
-      edges {
-        node {
-          title
-          excerpt
-          content
-          slug
-                        date(formatString: "YYYY,M,DD")
-
-featured_media {
-        alt_text
-              localFile {
-                childImageSharp{
-                    fluid(maxWidth:750){
-              ...GatsbyImageSharpFluid
-                        }
-                }
-              }
-            media_details {
-            width
-            height
-            file
+    query {
+        site {
+            siteMetadata {
+                title
+                subtitle
             }
-    }
-         # ...PostIcons
-          
         }
-      }
+        allWordpressPost(sort: { fields: [date], order: DESC }) {
+            edges {
+                node {
+                    title
+                    excerpt
+                    content
+                    slug
+                    date(formatString: "YYYY,M,DD")
+
+                    featured_media {
+                        alt_text
+                        localFile {
+                            childImageSharp{
+                                fluid(maxWidth:750){
+                                    ...GatsbyImageSharpFluid
+                                }
+                            }
+                        }
+                        media_details {
+                            width
+                            height
+                            file
+                        }
+                    }
+                    # ...PostIcons
+
+                }
+            }
+        }
     }
-  }
 `
