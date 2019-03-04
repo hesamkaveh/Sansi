@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
         title: `حسام‌ کاوه`,
         subtitle: `با تلاش من و شما جهان بهتر خواهد شد. نوشته هایی در مورد پیشرفت شخصی، کسب و کار و برنامه نویسی`,
-        siteUrl:"https://hesamkaveh.com/"
+        siteUrl: "https://hesamkaveh.com/"
 
     },
     plugins: [
@@ -31,7 +31,7 @@ module.exports = {
             options: {
                 host: 'https://hesamkaveh.com',
                 sitemap: 'https://hesamkaveh.com/rss.xml',
-                policy: [{ userAgent: '*', allow: '/' }]
+                policy: [{userAgent: '*', allow: '/'}]
             }
         },
         {
@@ -59,13 +59,6 @@ module.exports = {
         `gatsby-plugin-styled-components`,
 
 
-
-
-
-
-
-
-
         {
             resolve: `gatsby-plugin-feed`,
             options: {
@@ -84,15 +77,15 @@ module.exports = {
       `,
                 feeds: [
                     {
-                        serialize: ({ query: { site, allWordpressPost } }) => {
+                        serialize: ({query: {site, allWordpressPost}}) => {
                             return allWordpressPost.edges.map(edge => {
                                 console.log(edge);
                                 return Object.assign({}, edge.node.title, {
-                                    title:edge.node.title,
-                                    description: edge.node.excerpt.replace(`https://backend.hesamkaveh.com`,"https://hesamkaveh.com"),
+                                    title: edge.node.title,
+                                    description: (edge.node.acf != null ) ? edge.node.acf.description : edge.node.content.slice(0, 158).replace(/(<([^>]+)>)/ig, ''),
                                     url: site.siteMetadata.siteUrl + edge.node.slug,
                                     guid: site.siteMetadata.siteUrl + edge.node.slug,
-                                    custom_elements: [{ "content:encoded": edge.node.content }],
+                                    custom_elements: [{"content:encoded": edge.node.content}],
                                 })
                             })
                         },
@@ -102,9 +95,13 @@ module.exports = {
             edges {
               node {
                       date(formatString: "YYYY/MM/DD")
+                acf{
+                    description
+                }
 
                   title
                   excerpt
+                  content
                   content
                   slug
               }
