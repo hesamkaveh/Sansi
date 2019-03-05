@@ -6,7 +6,6 @@ import Slider from "./Slider";
 import {graphql, StaticQuery} from "gatsby";
 import {Helmet} from "react-helmet";
 import styled, {keyframes} from "styled-components";
-import '../global-styles'
 import favicon from '../images/favicon.ico'
 import logo from '../images/logo.jpg'
 import GlobalStyle from "../global-styles";
