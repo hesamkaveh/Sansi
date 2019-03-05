@@ -1,4 +1,4 @@
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from "styled-components"
 import BoldEot from './fonts/eot/IRANSansWeb_Bold.eot';
 import MediumEot from './fonts/eot/IRANSansWeb_Medium.eot';
 import LightEot from './fonts/eot/IRANSansWeb_Light.eot';
@@ -20,7 +20,7 @@ import LightTtf from './fonts/ttf/IRANSansWeb_Light.ttf';
 import UltraTtf from './fonts/ttf/IRANSansWeb_UltraLight.ttf';
 import NormalTtf from './fonts/ttf/IRANSansWeb.ttf';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
 hr {
     border: 0;
     border-top: 1px solid rgba(0,0,0,.1);
@@ -172,3 +172,4 @@ figcaption {
     opacity: 0.8;
 }
 `;
+export default GlobalStyle;

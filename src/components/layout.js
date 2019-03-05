@@ -9,6 +9,7 @@ import styled, {keyframes} from "styled-components";
 import '../global-styles'
 import favicon from '../images/favicon.ico'
 import logo from '../images/logo.jpg'
+import GlobalStyle from "../global-styles";
 
 const Container = styled.div`
     margin-left: auto;
@@ -109,6 +110,7 @@ site {
 
         render={data => (
             <Container className='container-fluid' style={{direction: "rtl"}}>
+                <GlobalStyle />
                 <Helmet>
                     <meta name="google-site-verification" content="BlsbMfE1ReAc7sOy18ZoTNw_hNfQJcU6ucReS5PsxFA" />
                     <html lang="fa" />

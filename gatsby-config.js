@@ -12,6 +12,7 @@ module.exports = {
          * plugins. Here the site sources its data from Wordpress.
          */
         {
+
             resolve: `gatsby-source-wordpress`,
             options: {
                 baseUrl: `backend.hesamkaveh.com`,
