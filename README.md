@@ -6,6 +6,9 @@ You can see my blog as [demo](https://hesamkaveh.com/) .
 ## how to data fetch? 
 When you are creating a blog post, you whould rebuild your website to fetch new data. In other word data will be fetch on build time. It's is easy however you can use webhook to do it automaticly. 
 
+## How about dynamic contents as commenting system?
+Commenting system is using ajax to query data from backend. It's completely dynamic. 
+
 # Installation
 1-Install dependencies.
 On Debian/Ubuntu:
