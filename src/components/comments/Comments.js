@@ -16,8 +16,7 @@ class Comments extends Component {
             replyCommentId: -1,
         };
         this.handler_ReplyChange = this.handler_ReplyChange.bind(this)
-
-
+        this.QueryData(this.props.postId)
     }
 
     handler_ReplyChange(x) {
@@ -49,29 +48,6 @@ class Comments extends Component {
                 console.log(error)
             })
     }
-
-    UNSAFE_componentWillReceiveProps(nextProps) {
-        this.QueryData(nextProps.postId)
-    }
-
-    UNSAFE_componentWillMount() {
-        this.QueryData(this.props.postId)
-    }
-
-    componentWillUnmount() {
-        this._mounted = false
-    }
-
-    componentDidMount() {
-        this._mounted = true
-    }
-
-    //
-    // shouldComponentUpdate(nextProps, nextState) {
-    //     this.QueryData(nextProps.postId)
-    //     console.log(nextProps)
-    //     return true;
-    // }
 
     render() {
         return (
