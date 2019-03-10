@@ -1,5 +1,13 @@
-What is Sansi?
-Sansi is a blog template using gatsby for frontend and wordpress for backend.
+# What is Sansi?
+A blog template with great seo that is using gatsby for frontend and wordpress for backend. 
+Gatsby ia a static aite generator and it is create a website with greate seo and great performance. 
+You can see my blog as [demo](https://hesamkaveh.com/) . 
+
+## how to data fetch? 
+When you are creating a blog post, you whould rebuild your website to fetch new data. In other word data will be fetch on build time. It's is easy however you can use webhook to do it automaticly. 
+
+## How about dynamic contents as commenting system?
+Commenting system is using ajax to query data from backend. It's completely dynamic. 
 
 # Installation
 1-Install dependencies.
@@ -28,10 +36,11 @@ On Arch:
 If data fetched with no error, open localhost:8000 to see website
 
 # TODO
-- [ ] Fix Rss file in standard way
+- [x] Fix Rss file in standard way
 - [ ] Load image in multiple resolutions
 - [x] Add commenting system
 - [ ] Add subscribe btn to commenting system
 - [x] Add Date in post detail
-- [ ] Fix in safari
-
+- [x] Fix in safari
+- [ ] Add sitemap
+- [ ] add menu burger for mobile
