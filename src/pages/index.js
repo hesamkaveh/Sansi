@@ -26,7 +26,6 @@ class Home extends Component {
 
 export default Home
 
-// Set here the ID of the home page.
 export const pageQuery = graphql`
     query {
         site {
