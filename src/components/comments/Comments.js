@@ -1,7 +1,7 @@
 import React, {Component} from "react"
 import Comment from "./comment";
 import Reply from "./Reply";
-
+import axios from 'axios'
 
 class Comments extends Component {
     constructor(props) {

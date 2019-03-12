@@ -38,7 +38,6 @@ const LiInSlider = styled.li`
     line-height: 1.4;
     &::before{
         content: '';
-        /* display: inline-block; */
         height: 22px;
         background-repeat: no-repeat;
         background-position: 0px 5px;

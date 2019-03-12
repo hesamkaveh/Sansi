@@ -10,8 +10,6 @@ const NavLink = styled(Link)`
         border-bottom: 1px dotted #ccc;
     }
     display: block;
-    padding: .5rem 1rem;
-    padding: 0;
     margin: 10px 16px;
     border-bottom: 1px dotted rgba(255, 255, 255, 0);
     `;

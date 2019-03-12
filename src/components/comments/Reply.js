@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import styled, {keyframes} from "styled-components";
 import user from "../../images/user.png"
-import axios from "axios";
+import axios from 'axios'
 
 const Title = styled.button`
     all:unset;

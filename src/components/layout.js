@@ -30,9 +30,7 @@ const PageBody = styled.div`
     display: flex;
     -ms-flex-wrap: wrap;
     flex-wrap: wrap;
-    margin: 0 -15px;
-
-    
+    margin: 0 -15px; 
 `;
 const Col = styled.div`
     -ms-flex-positive: 1;
@@ -51,7 +49,6 @@ const fadeIn = keyframes`
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
@@ -59,7 +56,7 @@ const fadeIn = keyframes`
 const HotPlace = styled(Col)`
     max-width: 780px;
     margin: 0 auto;
-            animation: ${fadeIn} 300ms linear;
+    animation: ${fadeIn} 300ms linear;
 
 `;
 const SliderContainer = styled(Col)`
@@ -99,10 +96,10 @@ site {
 
         render={data => (
             <Container className='container-fluid' style={{direction: "rtl"}}>
-                <GlobalStyle />
+                <GlobalStyle/>
                 <Helmet>
-                    <meta name="google-site-verification" content="BlsbMfE1ReAc7sOy18ZoTNw_hNfQJcU6ucReS5PsxFA" />
-                    <html lang="fa" />
+                    <meta name="google-site-verification" content="BlsbMfE1ReAc7sOy18ZoTNw_hNfQJcU6ucReS5PsxFA"/>
+                    <html lang="fa"/>
                     <meta charSet="UTF-8"/>
                     <title>{data.site.siteMetadata.title}</title>
                     <meta name="description" content={data.site.siteMetadata.subtitle}/>
