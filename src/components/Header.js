@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {Link} from "gatsby"
-
 import NavItem from "./NavItem";
 import logo from "../images/logo.jpg"
 import styled from "styled-components";

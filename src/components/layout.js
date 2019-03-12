@@ -2,7 +2,6 @@ import React from "react"
 import Header from './Header'
 import Footer from './Footer'
 import Slider from "./Slider";
-// import PropTypes from "prop-types"
 import {graphql, StaticQuery} from "gatsby";
 import {Helmet} from "react-helmet";
 import styled, {keyframes} from "styled-components";
@@ -16,22 +15,13 @@ const Container = styled.div`
     padding-left: 15px;
     padding-right: 15px;
     width: 100%;
-@media (max-width: 767px) { width: 99% !important;}
-
-@media (min-width: 768px) and (max-width: 991px) { width: 90% !important;}
-
-@media (min-width: 992px) and (max-width: 1200px) { width: 80% !important;}
-
-@media (min-width: 1200px) and (max-width: 1800px) { width: 80% !important;}
-
-@media (min-width: 1800px) { width: 60% !important;}
-
-@media (min-width: 991px) {.slider {max-width: 300px;}}
-
-@media (max-width: 991px) {.slider {flex-basis: unset !important;}}
-
-
-
+    @media (max-width: 767px) { width: 99% !important;}
+    @media (min-width: 768px) and (max-width: 991px) { width: 90% !important;}
+    @media (min-width: 992px) and (max-width: 1200px) { width: 80% !important;}
+    @media (min-width: 1200px) and (max-width: 1800px) { width: 80% !important;}
+    @media (min-width: 1800px) { width: 60% !important;}
+    @media (min-width: 991px) {.slider {max-width: 300px;}}
+    @media (max-width: 991px) {.slider {flex-basis: unset !important;}}
 `;
 const PageBody = styled.div`
     direction: rtl;

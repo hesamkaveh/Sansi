@@ -62,7 +62,6 @@ export const pageQuery = graphql`
               description
               id
           }
-         # ...PostIcons
       }
     }
   }

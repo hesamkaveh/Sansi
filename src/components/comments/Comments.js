@@ -1,7 +1,4 @@
 import React, {Component} from "react"
-// import Img from "gatsby-image"
-
-import axios from 'axios';
 import Comment from "./comment";
 import Reply from "./Reply";
 
@@ -15,7 +12,7 @@ class Comments extends Component {
             Parents: [],
             replyCommentId: -1,
         };
-        this.handler_ReplyChange = this.handler_ReplyChange.bind(this)
+        this.handler_ReplyChange = this.handler_ReplyChange.bind(this);
         this.QueryData(this.props.postId)
     }
 
