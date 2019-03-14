@@ -44,3 +44,5 @@ If data fetched with no error, open localhost:8000 to see website
 - [x] Fix in safari
 - [ ] Add sitemap
 - [ ] add menu burger for mobile
+- [ ] Generate seo tags by seo component instead of hard code
+- [ ] add config and translation file instead of hard code
