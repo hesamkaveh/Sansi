@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import styled from "styled-components";
+import {copyRight} from '../../site-translate'
 const FooterTag = styled.div`
     border-top: 1px solid #eee;
     margin-top: 30px;
@@ -20,7 +21,7 @@ class Footer extends Component {
     render() {
         return (
             <FooterTag>
-                <CopyRight>باز نشر مطالب آزاد است، حتی بدون ذکر منبع.</CopyRight>
+                <CopyRight>{copyRight}</CopyRight>
                 <div >قالب
                     {'\u00A0'}
                     <SourceLink href="https://github.com/Hesamkaveh/sansi">سانسی</SourceLink>

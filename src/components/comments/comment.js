@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import styled from "styled-components";
 import Reply from "./Reply";
+import {comments} from '../../../site-translate'
 
 const CommentContainer = styled.div`
     display:block;
@@ -91,7 +92,7 @@ class Comment extends Component {
                     <Header>
                         <Author>{data.author_name}</Author>
                         <Date>19/12/1375</Date>
-                        <ReplyBtn value={id} onClick={this.props.handler_ReplyChange}>پاسخ</ReplyBtn>
+                        <ReplyBtn value={id} onClick={this.props.handler_ReplyChange}>{comments.reply}</ReplyBtn>
                     </Header>
                     <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
                 </InnerContainer>
@@ -108,8 +109,6 @@ class Comment extends Component {
                 </Children>
             </CommentContainer>
         )
-
-
     }
 
     render() {

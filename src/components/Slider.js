@@ -9,6 +9,7 @@ import youtubeSvg from '../images/youtube.svg'
 import styled from "styled-components";
 import LastPostPng from '../images/push-pin.png'
 import CategoryPng from '../images/bookmark.png'
+import {followMe,search,categories,latestPost} from '../../site-translate'
 
 const SearchInput = styled.input`
     padding: 0.9em;
@@ -111,7 +112,7 @@ class Slider extends Component {
             <div>
 
                 <Container>
-                    <Label>آخرین پست ها</Label>
+                    <Label>{latestPost}</Label>
                     <UlInSlider>
                         {this.props.lastPost.map((s, index) => (<LiInSlider key={index} whichLi="post">
                             <Link to={`/${s.node.slug}`}>{s.node.title}</Link>
@@ -120,7 +121,7 @@ class Slider extends Component {
                 </Container>
 
                 <Container>
-                    <Label>دسته بندی‌ها</Label>
+                    <Label>{categories}</Label>
                     <UlInSlider>
                         {this.props.allCategories.map((s, index) => (<LiInSlider key={index} whichLi="category">
                             <Link to={`/category/${s.node.slug}`}>{s.node.name}</Link>
@@ -129,12 +130,12 @@ class Slider extends Component {
                 </Container>
 
                 <Container>
-                    <Label htmlFor="search">جست و جو</Label>
+                    <Label htmlFor="search">{search}</Label>
                     <SearchInput name="search" type="text" disabled/>
                 </Container>
 
                 <Container>
-                    <Label htmlFor="search">حسام را دنبال کنید</Label>
+                    <Label htmlFor="search">{followMe}</Label>
                     <FollowMeContainerInsta href="https://www.instagram.com/hesamkaveh/" target="_blank">
                         <InlineSVG src={instaSvg}/></FollowMeContainerInsta>
                     <FollowMeContainerYoutube

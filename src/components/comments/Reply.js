@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import styled, {keyframes} from "styled-components";
 import user from "../../images/user.png"
 import axios from 'axios'
-
+import {comments} from '../../../site-translate'
 const Title = styled.button`
     all:unset;
     font-weight:500;
@@ -30,7 +30,6 @@ const ReplyContainer = styled.form`
     display:block;
     width:100%;
     margin-bottom: 25px;
-    display: block;
     margin-top: 35px;
     border: 1px solid rgba(0,0,0,.1);
     padding: 20px 30px;
@@ -48,7 +47,6 @@ const InputContainer = styled.div`
 `;
 const InputCustom = styled.input`
     border:none;
-    color: #6b7074;
     line-height: 35px;
     color: #6b7074;
     font-size:16px;
@@ -183,16 +181,14 @@ class Reply extends Component {
     render() {
         return (
             <CommentContainer>
-                <Title>دیدگاه شما</Title>
+                <Title>{comments["your-comment"]}</Title>
                 {this.props.onTop ? null :
                     <Title2 id="exitBtn" value={-1} onClick={this.props.handler_ReplyChange}><span>× </span>انصراف</Title2>}
 
                 <ReplyContainer onSubmit={this.sendComment.bind(this)} parentId={this.props.parentId}>
                     {this.state.showStatus ?
                         <CommentSentStatus>
-                            نظر شما پس از تایید نمایش داده میشه
-                            <br/>
-                            مرسی بابت نظرت :)
+                            {comments["after-send"]}
                         </CommentSentStatus> : null
                     }
 
@@ -202,7 +198,7 @@ class Reply extends Component {
                             <InputUserDetail required
                                              type="text"
                                              name="author"
-                                             placeholder="نام *"
+                                             placeholder={comments.name}
                                              tabIndex="1"
                                              onChange={this.handleChange.bind(this)}/>
                         </InputContainer>
@@ -210,7 +206,7 @@ class Reply extends Component {
                             <InputUserDetail required
                                              type="email"
                                              name="email"
-                                             placeholder="ایمیل *"
+                                             placeholder={comments.email}
                                              tabIndex="2"
                                              onChange={this.handleChange.bind(this)}/>
                         </InputContainer>
@@ -218,7 +214,7 @@ class Reply extends Component {
                     <div className="comment-form-comment">
                         <CommentTextArea required
                                          name="comment"
-                                         placeholder="دیدگاه"
+                                         placeholder={comments.comment}
                                          tabIndex="3"
                                          onChange={this.handleChange.bind(this)}/>
                     </div>
@@ -226,7 +222,7 @@ class Reply extends Component {
                     <BTNContainer>
                         <Submit tabIndex="4"
                                 type="submit"
-                                children="ارسال دیدگاه"/>
+                                children={comments.send}/>
                     </BTNContainer>
                 </ReplyContainer>
             </CommentContainer>

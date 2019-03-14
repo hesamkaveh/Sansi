@@ -65,3 +65,4 @@ yarn-error.log
 # graphql config
 graphql.schema.json
 graphql.config.json
+note.txt

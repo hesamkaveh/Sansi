@@ -3,7 +3,7 @@ import Link from "gatsby-link";
 import PostIcons from "./PostIcons";
 import styled from "styled-components";
 import Img from "gatsby-image";
-
+import {moreContent} from '../../site-translate'
 const TitleLink = styled(Link)`
     font-size: 28px;
     display: table;
@@ -60,7 +60,7 @@ class PostPrev extends Component {
                          dangerouslySetInnerHTML={{__html: node.content.replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g, 'https://backend.hesamkaveh.com/wp-content/uploads')}}/>
                 }
                 <ContinueBtn to={node.slug}>
-                    ادامه مطلب←
+                    {moreContent}
                 </ContinueBtn>
             </div>
         );

@@ -3,7 +3,7 @@ import {Link} from "gatsby"
 import NavItem from "./NavItem";
 import logo from "../images/logo.jpg"
 import styled from "styled-components";
-
+import {menu,title} from "../../site-translate"
 const Logo = styled.img`
 height: 200px;
 `;
@@ -26,10 +26,10 @@ class Header extends Component {
         return (
             <div style={{textAlign: 'center'}}>
                 <Link to='/'><Logo src={logo} alt="حسام کاوه"/></Link>
-                <Title>روز نوشته های یک توسعه دهنده</Title>
+                <Title>{title}</Title>
                 <Navbar>
-                    <NavItem to="/">بلاگ</NavItem>
-                    <NavItem to="/about">درباره حسام</NavItem>
+                    <NavItem to="/">{menu["item-1"]}</NavItem>
+                    <NavItem to="/about">{menu["item-2"]}</NavItem>
                 </Navbar>
             </div>
         );

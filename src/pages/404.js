@@ -2,15 +2,15 @@ import React from "react";
 import Layout from "../components/layout"
 import {graphql} from "gatsby";
 import Helmet from "react-helmet";
-
+import {err404} from '../../site-translate'
 export default (data) => (
     <Layout>
         <Helmet>
-            <title>Page Not Found | {data.data.site.siteMetadata.title}</title>
+            <title>{err404.title} | {data.data.site.siteMetadata.title}</title>
         </Helmet>
         <div className="postContainer" style={{textAlign:'center'}}>
-            <h1 style={{fontWeight: 900}}>۴۰۴</h1>
-            <h3>متاسفانه صفحه مورد نظر یافت نشد!</h3>
+            <h1 style={{fontWeight: 900}}>{err404.content-2}</h1>
+            <h3>{err404["content-1"]}</h3>
 
         </div>
     </Layout>
