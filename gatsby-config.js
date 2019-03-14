@@ -80,7 +80,6 @@ module.exports = {
                     {
                         serialize: ({query: {site, allWordpressPost}}) => {
                             return allWordpressPost.edges.map(edge => {
-                                console.log(edge);
                                 return Object.assign({}, edge.node.title, {
                                     title: edge.node.title,
                                     description: (edge.node.acf != null ) ? edge.node.acf.description : edge.node.content.slice(0, 158).replace(/(<([^>]+)>)/ig, ''),

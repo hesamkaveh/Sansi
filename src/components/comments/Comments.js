@@ -18,7 +18,6 @@ class Comments extends Component {
 
     handler_ReplyChange(x) {
         x.preventDefault();
-        console.log(x.target.value);
         this.setState({
             replyCommentId: parseInt(x.target.value)
         })
