@@ -9,7 +9,8 @@ import youtubeSvg from '../images/youtube.svg'
 import styled from "styled-components";
 import LastPostPng from '../images/push-pin.png'
 import CategoryPng from '../images/bookmark.png'
-import {followMe,search,categories,latestPost} from '../../site-translate'
+import {followMe, search, categories, latestPost} from '../../site-translate'
+import {linkedinUrl, instagramUrl, githubUrl, twitterUrl, youtubeUrl} from '../../site-config'
 
 const SearchInput = styled.input`
     padding: 0.9em;
@@ -135,19 +136,28 @@ class Slider extends Component {
                 </Container>
 
                 <Container>
-                    <Label htmlFor="search">{followMe}</Label>
-                    <FollowMeContainerInsta href="https://www.instagram.com/hesamkaveh/" target="_blank">
-                        <InlineSVG src={instaSvg}/></FollowMeContainerInsta>
-                    <FollowMeContainerYoutube
-                        href="https://www.youtube.com/channel/UCyfBuLBzBIsbH6h4lXWjdlQ?view_as=subscriber"
-                        target="_blank">
-                        <InlineSVG src={youtubeSvg}/></FollowMeContainerYoutube>
-                    <FollowMeContainerLinkedin href="https://linkedin.com/in/hesamkaveh" target="_blank">
-                        <InlineSVG src={linkedinSvg}/></FollowMeContainerLinkedin>
-                    <FollowMeContainerTwitter href="https://twitter.com/hesamkaveh97" target="_blank">
-                        <InlineSVG src={twitterSvg}/></FollowMeContainerTwitter>
-                    <FollowMeContainerGitlab href="https://github.com/Hesamkaveh/" target="_blank">
-                        <InlineSVG src={githubSvg}/></FollowMeContainerGitlab>
+                    <Label>{followMe}</Label>
+
+                    <FollowMeContainerInsta href={instagramUrl} target="_blank">
+                        <InlineSVG src={instaSvg}/>
+                    </FollowMeContainerInsta>
+
+                    <FollowMeContainerYoutube href={youtubeUrl} target="_blank">
+                        <InlineSVG src={youtubeSvg}/>
+                    </FollowMeContainerYoutube>
+
+                    <FollowMeContainerLinkedin href={linkedinUrl} target="_blank">
+                        <InlineSVG src={linkedinSvg}/>
+                    </FollowMeContainerLinkedin>
+
+                    <FollowMeContainerTwitter href={twitterUrl} target="_blank">
+                        <InlineSVG src={twitterSvg}/>
+                    </FollowMeContainerTwitter>
+
+                    <FollowMeContainerGitlab href={githubUrl} target="_blank">
+                        <InlineSVG src={githubSvg}/>
+                    </FollowMeContainerGitlab>
+
                 </Container>
             </div>
         );

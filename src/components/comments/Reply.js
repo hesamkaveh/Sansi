@@ -3,6 +3,8 @@ import styled, {keyframes} from "styled-components";
 import user from "../../images/user.png"
 import axios from 'axios'
 import {comments} from '../../../site-translate'
+import {wordpressUrl} from '../../../site-config'
+
 const Title = styled.button`
     all:unset;
     font-weight:500;
@@ -151,7 +153,7 @@ class Reply extends Component {
 
     sendComment(e) {
         e.preventDefault();
-        axios.post(`https://backend.hesamkaveh.com/wp-json/wp/v2/comments?author_name=${this.state.author}&author_email=${this.state.email}&content=${this.state.comment}&post=${this.props.postId}&parent=${this.props.parentId}`)
+        axios.post(`${wordpressUrl}/wp-json/wp/v2/comments?author_name=${this.state.author}&author_email=${this.state.email}&content=${this.state.comment}&post=${this.props.postId}&parent=${this.props.parentId}`)
             .then(response => {
                 this.setState({
                     showStatus: 1,

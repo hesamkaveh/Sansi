@@ -2,7 +2,7 @@ import React, {Component} from "react"
 import Comment from "./comment";
 import Reply from "./Reply";
 import axios from 'axios'
-
+import {wordpressUrl} from '../../../site-config'
 class Comments extends Component {
     constructor(props) {
         super(props);
@@ -24,7 +24,7 @@ class Comments extends Component {
     }
 
     QueryData(id) {
-        axios.get(`https://backend.hesamkaveh.com/wp-json/wp/v2/comments?order=asc&post=${id}`)
+        axios.get(`${wordpressUrl}/wp-json/wp/v2/comments?order=asc&post=${id}`)
             .then(response => {
                 const data = response.data;
                 const ParentNode = {};
