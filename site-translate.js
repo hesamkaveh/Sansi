@@ -12,8 +12,8 @@ module.exports = {
     'followMe': 'حسام را دنبال کنید',
     'err404': {
         'title': 'Page Not Found',
-        'content-1': 'Page Not Found',
-        'content-2': '۴۰۴',
+        'content1': 'صفحه مورد نظر یافت نشد :(',
+        'content2': '۴۰۴',
     },
     'about_me': {
         'content':`<p>

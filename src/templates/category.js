@@ -50,7 +50,7 @@ export const pageQuery = graphql`
   description
 }
 
-  allWordpressPost(filter: {categories: {id: {eq: $id}}}) {
+  allWordpressPost(filter: {categories:{ elemMatch:{id: {eq: $id}}}}) {
    edges {
         node {
           title

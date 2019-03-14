@@ -38,7 +38,7 @@ export const pageQuery = graphql`
   name
   description
 }
-    allWordpressPost(filter: {tags: {id: {eq: $id}}}) {
+    allWordpressPost(filter: {tags: { elemMatch:{id: {eq: $id}}}}) {
     edges {
       node {
         id
