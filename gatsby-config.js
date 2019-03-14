@@ -2,7 +2,7 @@ module.exports = {
     siteMetadata: {
         title: `حسام‌ کاوه`,
         subtitle: `با تلاش من و شما جهان بهتر خواهد شد. نوشته هایی در مورد پیشرفت شخصی، کسب و کار و برنامه نویسی`,
-        siteUrl: "https://hesamkaveh.com/"
+        siteUrl: "https://hesamkaveh.com"
 
     },
     plugins: [
@@ -71,7 +71,6 @@ module.exports = {
               subtitle
               description:subtitle
               siteUrl
-              site_url: siteUrl
             }
           }
         }
@@ -82,9 +81,9 @@ module.exports = {
                             return allWordpressPost.edges.map(edge => {
                                 return Object.assign({}, edge.node.title, {
                                     title: edge.node.title,
-                                    description: (edge.node.acf != null ) ? edge.node.acf.description : edge.node.content.slice(0, 158).replace(/(<([^>]+)>)/ig, ''),
-                                    url: site.siteMetadata.siteUrl + edge.node.slug,
-                                    guid: site.siteMetadata.siteUrl + edge.node.slug,
+                                    description: (edge.node.acf != null) ? edge.node.acf.description : edge.node.content.slice(0, 158).replace(/(<([^>]+)>)/ig, ''),
+                                    url: site.siteMetadata.siteUrl + '/' + edge.node.slug,
+                                    guid: site.siteMetadata.siteUrl + '/' + edge.node.slug,
                                     custom_elements: [{"content:encoded": edge.node.content}],
                                 })
                             })
@@ -114,6 +113,11 @@ module.exports = {
                 ],
             },
         },
-
+        {
+            resolve: `gatsby-plugin-sitemap`,
+            options: {
+                sitemapSize: 2000
+            }
+        }
     ],
 };
