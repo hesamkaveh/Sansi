@@ -42,7 +42,7 @@ If data fetched with no error, open localhost:8000 to see website
 - [x] Add Date in post detail
 - [x] Fix in safari
 - [x] Add sitemap
+- [x] add config and translation file instead of hard code
 - [ ] Add subscribe btn to commenting system
 - [ ] add menu burger for mobile
 - [ ] Generate seo tags by seo component instead of hard code
-- [ ] add config and translation file instead of hard code
