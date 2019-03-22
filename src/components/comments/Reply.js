@@ -177,6 +177,8 @@ class Reply extends Component {
             case "comment":
                 this.setState({comment: event.target.value});
                 break;
+            default:
+                break;
         }
     }
 
@@ -185,7 +187,8 @@ class Reply extends Component {
             <CommentContainer>
                 <Title>{comments["your-comment"]}</Title>
                 {this.props.onTop ? null :
-                    <Title2 id="exitBtn" value={-1} onClick={this.props.handler_ReplyChange}><span>× </span>انصراف</Title2>}
+                    <Title2 id="exitBtn" value={-1}
+                            onClick={this.props.handler_ReplyChange}><span>× </span>انصراف</Title2>}
 
                 <ReplyContainer onSubmit={this.sendComment.bind(this)} parentId={this.props.parentId}>
                     {this.state.showStatus ?

@@ -2,7 +2,6 @@ import React, {Component} from "react"
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev";
-import Helmet from "react-helmet";
 import {title} from '../../site-translate'
 import SeoTagGenerate from "../components/SeoTagGenerate";
 

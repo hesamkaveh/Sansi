@@ -6,7 +6,7 @@ import {graphql, StaticQuery} from "gatsby";
 import styled, {keyframes} from "styled-components";
 import GlobalStyle from "../global-styles";
 import SeoTagGenerate from './SeoTagGenerate'
-import {description, title, title2} from '../../site-config'
+import {description, title} from '../../site-config'
 const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
