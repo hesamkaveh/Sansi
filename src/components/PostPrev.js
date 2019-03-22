@@ -42,12 +42,12 @@ class PostPrev extends Component {
         return (
 
             <div className="postContainer" key={node.slug}>
-                <TitleLink to={node.slug}>
+                <TitleLink to={`/${node.slug}`}>
                     <Title>{node.title}</Title>
                 </TitleLink>
                 <PostIcons node={node}/>
                 {node.featured_media ?
-                    <Link to={node.slug}>
+                    <Link to={`/${node.slug}`}>
                         <Img alt={node.title} className="FeaturedPostImg"
                              fluid={node.featured_media.localFile.childImageSharp.fluid} style={{width: '100%'}}/>
                     </Link> : null}
@@ -59,7 +59,7 @@ class PostPrev extends Component {
                     <div id="content"
                          dangerouslySetInnerHTML={{__html: node.content.replace(/http:\/\/backend\.hesamkaveh\.com\/wp-content\/uploads/g, 'https://backend.hesamkaveh.com/wp-content/uploads')}}/>
                 }
-                <ContinueBtn to={node.slug}>
+                <ContinueBtn to={`/${node.slug}`}>
                     {moreContent}
                 </ContinueBtn>
             </div>
