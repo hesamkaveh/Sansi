@@ -130,6 +130,7 @@ code, kbd, pre, samp {
 display: block;
 height: auto;
 max-width: 100%;
+margin: 0 auto;
 }
 
 
@@ -173,6 +174,9 @@ figcaption {
 }
 pre{
     overflow-x: auto;
+}
+figure{
+margin: 0 auto;
 }
 `;
 export default GlobalStyle;
