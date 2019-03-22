@@ -1,15 +1,14 @@
 import React from "react";
 import Layout from "../components/layout"
 import avatar from '../images/avatar.png'
-import {graphql} from "gatsby";
-import Helmet from "react-helmet";
-import {about_me} from '../../site-translate'
+import {about_me, title} from '../../site-translate'
+import SeoTagGenerate from "../components/SeoTagGenerate";
 
-export default (data) => (
+export default () => (
     <Layout>
-        <Helmet>
-            <title>درباره حسام | {data.data.site.siteMetadata.title}</title>
-        </Helmet>
+        <SeoTagGenerate type='blog'
+                        title={`درباره حسام | ${title}`}
+        />
         <div className="postContainer">
             <h2 style={{textAlign: 'center'}}>{about_me.title}</h2>
             <p>
@@ -23,19 +22,3 @@ export default (data) => (
         </div>
     </Layout>
 );
-
-
-export const pageQuery = graphql`
-    query {
-        site {
-            siteMetadata {
-                title
-                subtitle
-            }
-        }
-    }
-
-
-
-
-`;

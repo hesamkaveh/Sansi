@@ -3,6 +3,8 @@ import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev";
 import Helmet from "react-helmet";
+import {title} from '../../site-translate'
+import SeoTagGenerate from "../components/SeoTagGenerate";
 
 
 class PageTemplate extends Component {
@@ -12,9 +14,10 @@ class PageTemplate extends Component {
 
         return (
             <Layout>
-                <Helmet>
-                    <title>{currentTag.name} | {this.props.data.site.siteMetadata.title}</title>
-                </Helmet>
+                <SeoTagGenerate type='blog'
+                                title={`${currentTag.name} | ${title}`}
+                                description={currentTag.description}
+                />
                 <h1 className='categoryName'>{currentTag.name}</h1>
                 <h3 className='categoryDescription'>{currentTag.description}</h3>
                 <hr/>

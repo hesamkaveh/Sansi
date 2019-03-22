@@ -2,15 +2,17 @@ import React, {Component} from "react"
 import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev";
-import Helmet from "react-helmet";
 import styled from "styled-components";
-const Name=styled.h1`
+import SeoTagGenerate from "../components/SeoTagGenerate";
+import {title} from '../../site-translate'
+
+const Name = styled.h1`
     font-size: 25px;
     line-height: 35px;
     margin-top: 15px;
     font-weight: 500;
 `;
-const Description=styled.h2`
+const Description = styled.h2`
     font-size: 18px;
     line-height: 30px;
     font-weight: 400;
@@ -23,9 +25,10 @@ class PageTemplate extends Component {
 
         return (
             <Layout>
-                <Helmet>
-                    <title>{currentCategory.name} | {this.props.data.site.siteMetadata.title}</title>
-                </Helmet>
+                <SeoTagGenerate type='blog'
+                                title={`${currentCategory.name} | ${title}`}
+                                description={currentCategory.description}
+                />
                 <Name>{currentCategory.name}</Name>
                 <Description>{currentCategory.description}</Description>
                 <hr/>
@@ -43,37 +46,26 @@ class PageTemplate extends Component {
 export default PageTemplate
 
 export const pageQuery = graphql`
-  query($id: String!) {
-  wordpressCategory(id:{eq:$id}) {
-  id
-  name
-  description
-}
+    query($id: String!) {
+        wordpressCategory(id:{eq:$id}) {
+            id
+            name
+            description
+        }
 
-  allWordpressPost(filter: {categories:{ elemMatch:{id: {eq: $id}}}}) {
-   edges {
-        node {
-          title
-          excerpt
-          content
-          slug
-          categories {
-              name
-              description
-              id
-          }
-      }
-    }
-  }
-      site {
-      siteMetadata {
-        title
-        subtitle
-      }
-    }
-}
-
-  
-  
-
-`;
+        allWordpressPost(filter: {categories:{ elemMatch:{id: {eq: $id}}}}) {
+            edges {
+                node {
+                    title
+                    excerpt
+                    content
+                    slug
+                    categories {
+                        name
+                        description
+                        id
+                    }
+                }
+            }
+        }
+    }`;

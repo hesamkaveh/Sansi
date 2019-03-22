@@ -4,10 +4,10 @@ import PostIcons from "../components/PostIcons"
 import Tags from "../components/Tags"
 import Img from "gatsby-image"
 import Layout from "../components/layout"
-import Helmet from "react-helmet";
 import styled from "styled-components";
 import Comments from '../components/comments/Comments'
 import ReadingProgress from "react-reading-progress";
+import SeoTagGenerate from "../components/SeoTagGenerate";
 
 const Title = styled.h1`
     display: table;
@@ -41,10 +41,17 @@ class PostTemplate extends Component {
         this.CommentRef = React.createRef();
     }
 
+    getFeatureMedia() {
+        if (this.props.data.wordpressPost.featured_media) {
+            return (this.props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid.src)
+        } else {
+            //TODO: return first image of post
+            return (null)
+        }
+    }
+
     render() {
         const post = this.props.data.wordpressPost;
-        let title = `${post.title} | ${this.props.data.site.siteMetadata.title}`;
-
         let description = '';
         if (post.acf !== null) {
             if (post.acf.description !== '') {
@@ -57,27 +64,14 @@ class PostTemplate extends Component {
             <div>
                 <ProgressBar targetEl=".postContainer"/>
                 <Layout>
-                    <Helmet>
-                        <title>{title}</title>
-                        <meta name="keywords" itemProp="keywords" key={1}
-                              content={post.tags ? post.tags.map((tag) => `${tag.name}`) : null}/>
-                        <meta name="description" content={description}/>
-                        <meta property="og:title" content={title}/>
-                        <meta property="og:description" content={description}/>
-                        <meta property="og:site_name" content={post.title}/>
-                        <meta property="og:type" content="article"/>
-                        <meta property="og:og:updated_time" content={post.modified_date}/>
-                        <meta property="article:published_time" content={post.publish_date}/>
-                        <meta property="article:modified_time" content={post.modified_date}/>
-                        {post.tags ? post.tags.map((tag) => <meta key={2} property="article:tag"
-                                                                  content={tag.name}/>) : null}
-                        {post.tags ? <meta property="article:section" content={post.tags[0].name}/> : null}
-                        <meta name="twitter:description" content={description}/>
-                        <meta name="twitter:title" content={title}/>
-                        {post.featured_media ? <meta property="og:image"
-                                                     content={post.featured_media.localFile.childImageSharp.fluid.src}/> : null}
-
-                    </Helmet>
+                    <SeoTagGenerate type='article'
+                                    title={post.title}
+                                    description={description}
+                                    tags={post.tags}
+                                    published_time={post.publish_date}
+                                    modified_time={post.modified_date}
+                                    image={this.getFeatureMedia()}
+                    />
                     <div className="postContainer">
                         <Title dangerouslySetInnerHTML={{__html: post.title}}/>
                         <PostIcons node={post}/>
@@ -106,9 +100,11 @@ export const pageQuery = graphql`
             }
             wordpress_id
             content
-            date(formatString: "YYYY,M,DD")
-            publish_date:date
-            modified_date:modified
+            publish_date:date(formatString: "DD-MM-YYYY hh:mm:ss a")
+            modified_date:modified(formatString: "DD-MM-YYYY hh:mm:ss a")
+            categories {
+                name
+            }
             tags {
                 name
                 slug
@@ -127,12 +123,6 @@ export const pageQuery = graphql`
                     height
                     file
                 }
-            }
-        }
-        site {
-            siteMetadata {
-                title
-                subtitle
             }
         }
     }
