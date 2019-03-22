@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import {createGlobalStyle} from "styled-components"
 import BoldEot from './fonts/eot/IRANSansWeb_Bold.eot';
 import MediumEot from './fonts/eot/IRANSansWeb_Medium.eot';
 import LightEot from './fonts/eot/IRANSansWeb_Light.eot';
@@ -170,6 +170,9 @@ blockquote{
 figcaption {
     text-align: center;
     opacity: 0.8;
+}
+pre{
+    overflow-x: auto;
 }
 `;
 export default GlobalStyle;
