@@ -51,9 +51,26 @@ export const pageQuery = graphql`
         tags {
           name
         }
+          featured_media {
+              alt_text
+              localFile {
+                  childImageSharp{
+                      fluid(maxWidth:750){
+                          ...GatsbyImageSharpFluid
+                      }
+                  }
+              }
+              media_details {
+                  width
+                  height
+                  file
+              }
+          }
+
       }
     }
   }
+      
         site {
       siteMetadata {
         title
