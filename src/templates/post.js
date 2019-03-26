@@ -19,8 +19,7 @@ const Title = styled.h1`
 `;
 const ProgressBar = styled(ReadingProgress)`
     direction: rtl;
-    color: red !important;
-    height: 1.6px;
+    height: 1.4px !important;
     ::-moz-progress-bar {
     background: #29d !important;
     -webkit-box-shadow: 0 0 4px #29d,0 0 4px #29d;
