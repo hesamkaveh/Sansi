@@ -14,6 +14,7 @@ const PostDetail = styled.div`
         color: red;
     }
 `;
+
 class PostIcons extends React.Component {
     monthToString(monthInt) {
         switch (monthInt) {
@@ -47,13 +48,14 @@ class PostIcons extends React.Component {
     }
 
     render() {
-        var date="2018,9,1".split(',');
-        try{
-              date = (this.props.node.date.split(','))
+        let date;
+        try {
+            date = (this.props.node.date).split(',')
+        } catch (e) {
+            date = "2019,1,1".split(',');
 
-        }catch (e) {
         }
-        const jalali=toJalaali(Number(date[0]),Number(date[1]),Number(date[2]));
+        const jalali = toJalaali(Number(date[0]), Number(date[1]), Number(date[2]));
         return (
             <PostDetail>
                                 <span>
@@ -76,13 +78,13 @@ class PostIcons extends React.Component {
 export default PostIcons
 
 export const query = graphql`
-  fragment PostIcons on wordpress__POST {
-    date(formatString: "MMMM DD, YYYY")
-    tags {
-      name
+    fragment PostIcons on wordpress__POST {
+        date(formatString: "MMMM DD, YYYY")
+        tags {
+            name
+        }
+        categories {
+            name
+        }
     }
-    categories {
-      name
-    }
-  }
 `;

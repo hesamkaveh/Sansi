@@ -99,6 +99,7 @@ export const pageQuery = graphql`
             }
             wordpress_id
             content
+            date(formatString: "YYYY,M,DD")
             publish_date:date(formatString: "DD-MM-YYYY hh:mm:ss a")
             modified_date:modified(formatString: "DD-MM-YYYY hh:mm:ss a")
             categories {
