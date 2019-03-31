@@ -46,10 +46,7 @@ class seoTagGenerate extends Component {
                     <meta property="article:modified_time" content={this.props.modified_time}/>
                     : null}
 
-
-                {/* TODO: Add {children} */}
-
-
+                    {this.props.children}
             </Helmet>
         );
     }
