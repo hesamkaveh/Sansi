@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev";
 import {title} from '../../site-translate'
-import SeoTagGenerate from "../components/SeoTagGenerate";
+import SeoTagGenerate from "../components/SeoTagGenerator";
 
 
 class PageTemplate extends Component {

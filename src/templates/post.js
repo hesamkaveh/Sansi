@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import styled from "styled-components";
 import Comments from '../components/comments/Comments'
 import ReadingProgress from "react-reading-progress";
-import SeoTagGenerate from "../components/SeoTagGenerate";
+import SeoTagGenerate from "../components/SeoTagGenerator";
 
 const Title = styled.h1`
     display: table;

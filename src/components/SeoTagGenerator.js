@@ -3,7 +3,7 @@ import {Helmet} from "react-helmet";
 import {seo, rssLink, title as siteTitle} from "../../site-config";
 import favicon from "../images/favicon.png";
 
-class seoTagGenerate extends Component {
+class seoTagGenerator extends Component {
     render() {
         return (
             <Helmet>
@@ -52,4 +52,4 @@ class seoTagGenerate extends Component {
     }
 }
 
-export default seoTagGenerate;
+export default seoTagGenerator;

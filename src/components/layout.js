@@ -5,7 +5,7 @@ import Slider from "./Slider";
 import {graphql, StaticQuery} from "gatsby";
 import styled, {keyframes} from "styled-components";
 import GlobalStyle from "../global-styles";
-import SeoTagGenerate from './SeoTagGenerate'
+import SeoTagGenerate from './SeoTagGenerator'
 import {description, title} from '../../site-config'
 const Container = styled.div`
     margin-left: auto;

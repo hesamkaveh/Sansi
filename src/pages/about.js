@@ -2,7 +2,7 @@ import React from "react";
 import Layout from "../components/layout"
 import avatar from '../images/avatar.png'
 import {about_me, title} from '../../site-translate'
-import SeoTagGenerate from "../components/SeoTagGenerate";
+import SeoTagGenerate from "../components/SeoTagGenerator";
 
 export default () => (
     <Layout>

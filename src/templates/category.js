@@ -3,7 +3,7 @@ import {graphql} from "gatsby"
 import Layout from "../components/layout"
 import PostPrev from "../components/PostPrev";
 import styled from "styled-components";
-import SeoTagGenerate from "../components/SeoTagGenerate";
+import SeoTagGenerate from "../components/SeoTagGenerator";
 import {title} from '../../site-translate'
 
 const Name = styled.h1`
