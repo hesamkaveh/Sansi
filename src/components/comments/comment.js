@@ -88,7 +88,6 @@ class Comment extends Component {
         }
         let date=data.date.substring(0,10).split('-');
         let jalali = toJalaali(Number(date[0]), Number(date[1]), Number(date[2]));
-        console.log(jalali)
         return (
             <CommentContainer>
                 <Avatar><img src={data.author_avatar_urls["48"]} alt=""/></Avatar>
