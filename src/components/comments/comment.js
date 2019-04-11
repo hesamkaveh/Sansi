@@ -2,6 +2,7 @@ import React, {Component} from "react"
 import styled from "styled-components";
 import Reply from "./Reply";
 import {comments} from '../../../site-translate'
+import {toJalaali} from "jalaali-js";
 
 const CommentContainer = styled.div`
     display:block;
@@ -85,13 +86,16 @@ class Comment extends Component {
         if (this.props.ParentsId[id].length === 0) {
             IsEnd = 1
         }
+        let date=data.date.substring(0,10).split('-');
+        let jalali = toJalaali(Number(date[0]), Number(date[1]), Number(date[2]));
+        console.log(jalali)
         return (
             <CommentContainer>
                 <Avatar><img src={data.author_avatar_urls["48"]} alt=""/></Avatar>
                 <InnerContainer>
                     <Header>
                         <Author>{data.author_name}</Author>
-                        <Date>19/12/1375</Date>
+                        <Date>{jalali.jd}/{jalali.jm}/{jalali.jy}</Date>
                         <ReplyBtn value={id} onClick={this.props.handler_ReplyChange}>{comments.reply}</ReplyBtn>
                     </Header>
                     <Content dangerouslySetInnerHTML={{__html: data.content.rendered}}/>
