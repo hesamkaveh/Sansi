@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://hesamkaveh.com/rss.xml
-Host: https://hesamkaveh.com
