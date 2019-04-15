@@ -1,8 +1,8 @@
 {
   "name": "gatsby-sansi-theme",
+  "homepage": "https://hesamkaveh.github.io/Sansi/",
   "private": false,
   "description": "minimal theme for personal blog",
-  "version": "0.9",
   "author": "hesamkaveh <hk.hesam.hk@gmail.com>",
   "dependencies": {
     "axios": "^0.18.0",
@@ -45,5 +45,6 @@
     "deploy": "gatsby build --prefix-paths && gh-pages -d public"
   },
   "devDependencies": {
+    "gh-pages": "^2.0.1"
   }
 }
