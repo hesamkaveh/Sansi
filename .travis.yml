@@ -6,6 +6,7 @@ cache:
     - node_modules
 script:
   - npm run build
+  - echo 'hesamkaveh.com' > ./public/CNAME
 
 deploy:
   provider: pages

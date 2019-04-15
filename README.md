@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/hesamkaveh/Sansi.svg?branch=master)](https://travis-ci.org/hesamkaveh/Sansi)
+
 # What is Sansi?
 A blog template with great seo that is using gatsby for frontend and wordpress for backend. 
 Gatsby ia a static aite generator and it is create a website with greate seo and great performance. 
