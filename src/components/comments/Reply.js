@@ -161,8 +161,8 @@ class Reply extends Component {
                 setTimeout(() => (this.setState({
                     showStatus: 0,
                 }),
-                document.getElementById('exitBtn').click()
-                ), 5000);
+                    window.location.reload()
+                ), 3000);
             })
     }
 
