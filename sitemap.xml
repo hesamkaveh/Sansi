@@ -12,6 +12,7 @@
 <url> <loc>https://hesamkaveh.com/category/کتاب/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/category/لینوکس/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/category/معرفی-چیز-ها/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hesamkaveh.com/دانلود-فولدر-خاص-از-ریپوزیتوری-گیت-هاب</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/با-تلاش-من-و-شما-جهان-بهتر-خواهد-شد</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/کتاب-خواندن-همیشه-خوب-نیست</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/از-کم-تجربگی-من-تا-کشته-شدن-مردم-در-سیل</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -38,6 +39,7 @@
 <url> <loc>https://hesamkaveh.com/tag/digitalocean/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/figure-eight/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/gatsbyjs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hesamkaveh.com/tag/git/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/github/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/gitkraken/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/heroku/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -46,6 +48,7 @@
 <url> <loc>https://hesamkaveh.com/tag/nextjs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/reactjs/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/sansi/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hesamkaveh.com/tag/svn/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/thinkful/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/transifex/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/travis-ci/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -100,6 +103,8 @@
 <url> <loc>https://hesamkaveh.com/tag/دانش-آموز/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/دانشجو/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/دانشگاه/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hesamkaveh.com/tag/دانلود-از-github/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hesamkaveh.com/tag/دانلود-فولدر/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/دلیل-سیل-1398/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/دوچرخه/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/رادیو-کار-نکن/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
@@ -124,6 +129,7 @@
 <url> <loc>https://hesamkaveh.com/tag/قدرت-عادت/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/کتاب-های-نامناسب/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/کسب-و-کار/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
+<url> <loc>https://hesamkaveh.com/tag/گیت-هاب/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/لبخند/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/لینوکس/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>
 <url> <loc>https://hesamkaveh.com/tag/ماست-مالی/</loc> <changefreq>daily</changefreq> <priority>0.7</priority> </url>

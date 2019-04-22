@@ -1,4 +1,146 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[حسام‌ کاوه]]></title><description><![CDATA[با تلاش من و شما جهان بهتر خواهد شد. نوشته هایی در مورد پیشرفت شخصی، کسب و کار و برنامه نویسی]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Sun, 21 Apr 2019 21:30:42 GMT</lastBuildDate><item><title><![CDATA[با تلاش من و شما جهان بهتر خواهد شد]]></title><link>https://hesamkaveh.com/%d8%a8%d8%a7-%d8%aa%d9%84%d8%a7%d8%b4-%d9%85%d9%86-%d9%88-%d8%b4%d9%85%d8%a7-%d8%ac%d9%87%d8%a7%d9%86-%d8%a8%d9%87%d8%aa%d8%b1-%d8%ae%d9%88%d8%a7%d9%87%d8%af-%d8%b4%d8%af</link><guid isPermaLink="false">https://hesamkaveh.com/%d8%a8%d8%a7-%d8%aa%d9%84%d8%a7%d8%b4-%d9%85%d9%86-%d9%88-%d8%b4%d9%85%d8%a7-%d8%ac%d9%87%d8%a7%d9%86-%d8%a8%d9%87%d8%aa%d8%b1-%d8%ae%d9%88%d8%a7%d9%87%d8%af-%d8%b4%d8%af</guid><content:encoded>
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[حسام‌ کاوه]]></title><description><![CDATA[با تلاش من و شما جهان بهتر خواهد شد. نوشته هایی در مورد پیشرفت شخصی، کسب و کار و برنامه نویسی]]></description><link>http://github.com/dylang/node-rss</link><generator>RSS for Node</generator><lastBuildDate>Mon, 22 Apr 2019 15:36:32 GMT</lastBuildDate><item><title><![CDATA[دانلود فولدر خاص از ریپوزیتوری گیت هاب]]></title><link>https://hesamkaveh.com/%d8%af%d8%a7%d9%86%d9%84%d9%88%d8%af-%d9%81%d9%88%d9%84%d8%af%d8%b1-%d8%ae%d8%a7%d8%b5-%d8%a7%d8%b2-%d8%b1%db%8c%d9%be%d9%88%d8%b2%db%8c%d8%aa%d9%88%d8%b1%db%8c-%da%af%db%8c%d8%aa-%d9%87%d8%a7%d8%a8</link><guid isPermaLink="false">https://hesamkaveh.com/%d8%af%d8%a7%d9%86%d9%84%d9%88%d8%af-%d9%81%d9%88%d9%84%d8%af%d8%b1-%d8%ae%d8%a7%d8%b5-%d8%a7%d8%b2-%d8%b1%db%8c%d9%be%d9%88%d8%b2%db%8c%d8%aa%d9%88%d8%b1%db%8c-%da%af%db%8c%d8%aa-%d9%87%d8%a7%d8%a8</guid><content:encoded>
+&lt;p&gt;بعضی ریپوزیتوری ها خیلی حجیم هستند ولی فقط دایرکتوری خاصی از اونو لازم داریم.&lt;/p&gt;
+
+
+
+&lt;p&gt;مثلا من پوشه examples از ریپوزیتوری &lt;a rel=&quot;noreferrer noopener&quot; aria-label=&quot;gatsby (opens in a new tab)&quot; href=&quot;https://github.com/gatsbyjs/gatsby&quot; target=&quot;_blank&quot;&gt;gatsby&lt;/a&gt; را لازم داشتم. ابتدا زدم کل ریپوزیتوری دانلود شه. صبر کردم و صبر کردم&amp;#8230; 866 مگابایت ناقابل دانلود شد:(&lt;/p&gt;
+
+
+
+&lt;p&gt;اما خب چه کاری بود! داکیومنت ها و کلی اضافات دیگه همراه فایل ها بود که اصلا به کارم نمیومد.&lt;/p&gt;
+
+
+
+&lt;p&gt;سرچ کردم که چطوری یک دایرکتوری خاص از ریپازیتوری را دانلود کنم. چند تا راه پیدا کردم که دو تاش از بقیه بهتر بود. منم جفتشو معرفی میکنم، اولی روش پرسرعت تره ولی در عوض دومی روش دم دست تریه.&lt;/p&gt;
+
+
+
+&lt;h2&gt;روش اول &amp;#8211; استفاده از Subversion&lt;br&gt;&lt;/h2&gt;
+
+
+
+&lt;p&gt;Subversion یا svn یک ورژن کنترلر شبیه به git است که دیگه کمتر ازش استفاده میشه. اگه این ابزار روی کامپیوترتون نصب هست حتما از این روش استفاده کنید. روی manjaro بصورت پیشفرض نصب بود ولی در اوبونتو به سادگی از طریق مخازن میتونین نصبش کنید:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;sudo apt install subversion&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;برای تست اینکه درست نصب شده یا نه در ترمینال دستور svn را بنویسید.&lt;/p&gt;
+
+
+
+&lt;h3&gt;مرحله ۱ &amp;#8211; کپی کردن لینک ریپازیتوری&lt;br&gt;&lt;/h3&gt;
+
+
+
+&lt;p&gt;لینک ریپازیتوری مورد نظر را کپی کنید، بطور مثال:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;https://github.com/hesamkaveh/Sansi&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;h3&gt;مرحله ۲ &amp;#8211; اصلاح لینک&lt;/h3&gt;
+
+
+
+&lt;p&gt;و بر فرض اگر دایرکتوری src/components از برنچ master را لازم دارید، آدرستون رو به شکل زیر تغییر بدین:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;https://github.com/hesamkaveh/Sansi/trunk/src/components&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;trunk به این معناست که به master اشاره داریم.&lt;/p&gt;
+
+
+
+&lt;p&gt;یا اگر به برنچ دیگری مثل foo اشاره دارید کافیه به جای trunk بنویسید branches/foo&lt;/p&gt;
+
+
+
+&lt;h3&gt;مرحله ۳ &amp;#8211; دانلود ریپازیتوری&lt;br&gt;&lt;/h3&gt;
+
+
+
+&lt;p&gt;و نهایتا برای دانلود این دایرکتوری کافیه دستور زیر را بزنین:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;svn export YOUTLINK&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;فراموش نکنید YOUTLINK را با لینک اصلاح شده در مرحله قبل جایگزین کنین.&lt;br&gt;&lt;/p&gt;
+
+
+
+&lt;h2&gt;روش دوم &amp;#8211; استفاده از git&lt;/h2&gt;
+
+
+
+&lt;p&gt;این روش دم دست تریه چون git رو هر کامپیوتری نصبه و مام قراره از دستور git استفاده کنیم. ولی سرعتش کمتر از روش قبله. &lt;/p&gt;
+
+
+
+&lt;h3&gt;مرحله ۱ و ۲&lt;/h3&gt;
+
+
+
+&lt;p&gt;مشابه روش اول&lt;/p&gt;
+
+
+
+&lt;h3&gt;مرحله ۳ &amp;#8211; آماده سازی برای دانلود:&lt;/h3&gt;
+
+
+
+&lt;p style=&quot;text-align:right&quot;&gt;دستور زیر را در ترمینال وارد کنین:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;git svn init YOUTLINK&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;همونطوری که میبینین تو این دستور هم یک جورایی از svn کمک گرفتیم. &lt;/p&gt;
+
+
+
+&lt;p&gt;فراموش نکنید YOUTLINK را با لینک اصلاح شده در مرحله قبل جایگزین کنید.&lt;/p&gt;
+
+
+
+&lt;h3&gt;مرحله ۴ &amp;#8211; دانلود ریپازیتوری&lt;/h3&gt;
+
+
+
+&lt;p&gt;دستور زیر را وارد کنین:&lt;/p&gt;
+
+
+
+&lt;pre class=&quot;wp-block-code&quot;&gt;&lt;code&gt;git svn fetch&lt;/code&gt;&lt;/pre&gt;
+
+
+
+&lt;p&gt;&lt;/p&gt;
+
+
+
+&lt;p&gt;پ.ن:&lt;/p&gt;
+
+
+
+&lt;p&gt;دلیل اینکه سرعت متفاوته، اینه که روش اول فقط آخرین نسخه از فایل را دانلود میکنه، در صورتی که روش دوم کل commit ها را دانلود میکند. &lt;/p&gt;
+
+
+
+&lt;p&gt;پس روش دوم یجورایی میشه clone کردن کاستوم دایرکتوری درحالی که روش اول دانلود کردن کاستوم دایرکتوری محسوب میشه.&lt;/p&gt;
+</content:encoded></item><item><title><![CDATA[با تلاش من و شما جهان بهتر خواهد شد]]></title><link>https://hesamkaveh.com/%d8%a8%d8%a7-%d8%aa%d9%84%d8%a7%d8%b4-%d9%85%d9%86-%d9%88-%d8%b4%d9%85%d8%a7-%d8%ac%d9%87%d8%a7%d9%86-%d8%a8%d9%87%d8%aa%d8%b1-%d8%ae%d9%88%d8%a7%d9%87%d8%af-%d8%b4%d8%af</link><guid isPermaLink="false">https://hesamkaveh.com/%d8%a8%d8%a7-%d8%aa%d9%84%d8%a7%d8%b4-%d9%85%d9%86-%d9%88-%d8%b4%d9%85%d8%a7-%d8%ac%d9%87%d8%a7%d9%86-%d8%a8%d9%87%d8%aa%d8%b1-%d8%ae%d9%88%d8%a7%d9%87%d8%af-%d8%b4%d8%af</guid><content:encoded>
 &lt;p&gt;یچیزو خوب تو زندگیم یاد گرفتم، اینکه کاری که همه میکنند رو انجام ندم. نه اینکه به کل خلاف جامعه باشم ولی معمولا منو تو یه جای شلوغ که هرکسی میره پیدا نمی‌کنید. شاید به همین خاطره که از صف نانوایی بدم میاد. &lt;/p&gt;
 
 
