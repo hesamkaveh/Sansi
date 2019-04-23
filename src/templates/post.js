@@ -8,6 +8,7 @@ import styled from "styled-components";
 import Comments from '../components/comments/Comments'
 import ReadingProgress from "react-reading-progress";
 import SeoTagGenerate from "../components/SeoTagGenerator";
+import logo from "../images/logo.jpg"
 
 const Title = styled.h1`
     display: table;
@@ -45,7 +46,7 @@ class PostTemplate extends Component {
             return (this.props.data.wordpressPost.featured_media.localFile.childImageSharp.fluid.src)
         } else {
             //TODO: return first image of post
-            return (null)
+            return (logo)
         }
     }
 
