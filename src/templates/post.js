@@ -51,12 +51,13 @@ class PostTemplate extends Component {
 
     render() {
         const post = this.props.data.wordpressPost;
-        let description = '';
+        var description = '';
         if (post.acf !== null) {
             if (post.acf.description !== '') {
                 description = post.acf.description;
             }
-        } else if (description === '') {
+        }
+        if (description === '') {
             description = post.content.slice(0, 158).replace(/(<([^>]+)>)/ig, '');
         }
         return (
